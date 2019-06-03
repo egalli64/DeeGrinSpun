@@ -26,9 +26,9 @@ public class OvedController {
 	
 
 	
-	@GetMapping("/elenco")
-	public String elenco() {
-		
+	@GetMapping("/ristoratore")
+	public String elenco(Model model) {
+		model.addAttribute("restaurants", repo.findAll()); 
 		return "/elenco";
 	}
 	
