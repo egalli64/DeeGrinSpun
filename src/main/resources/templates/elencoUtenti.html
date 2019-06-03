@@ -4,17 +4,30 @@
 
 <head>
 <meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,
+shrink-to-fit=no">
 <title>Thymeleaf</title>
+<link rel="stylesheet" type="text/css" href="css\fontAwesome.css" />
+<link rel="stylesheet" type="text/css" href="css\bootstrap-theme.css" />
+<link rel="stylesheet" type="text/css"
+	href="css\bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="css\bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css\bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css\templatemo-style.css" />
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
-<body>
+<body style="text-align: center" class="container-fluid ">
 
 	<p>Utenti in table</p>
 
 
-				
-					<button type="submit">Insert</button>
-	<table>
+
+	<button type="submit" class="btn btn-success">Insert</button>
+	<table class="table table-striped">
 		<tr>
 			<th>UTENTE_ID</th>
 			<th>NOME</th>
@@ -22,57 +35,42 @@
 			<th>EMAIL</th>
 			<th>USER_ID</th>
 			<th>AFFIDABILITA'</th>
-			
+
 		</tr>
 		<tr th:each="cur: ${utents}">
-				<td th:text="${cur.utenteId}">1</td>
+			<td th:text="${cur.utenteId}">1</td>
 			<td th:text="${cur.nome}">Trattoria</td>
 			<td th:text="${cur.cognome}"></td>
 			<td th:text="${cur.email}"></td>
 			<td th:text="${cur.userId}"></td>
 			<td th:text="${cur.password}"></td>
 			<td th:text="${cur.affidabilita}"></td>
-			<td>
-			
-		
-			
-
-				
-				
-
-
-			</td>
-			
-			
-			
-		
+			<td></td>
 	</table>
 
-		<form action="/insertUtente" method="get">
-	
-					
-					<button type="submit">Insert</button>
-				
-				</form>	
-	
-	<form action="/updateUtente" method="get">
-	
-					
-					<button type="submit">Update</button>
-				
-				</form>	
-					
-					<form action="/deleteUtente"
-					method="get">
-					
-					<div>
-<label for="id">Utente id:</label>
-<input type="text"  name="id">
-</div>
-					
-					<button type="submit">Delete</button>
-				
-				</form>
+	<form action="/insertUtente" method="get">
 
-							
+
+		<button type="submit" class="btn btn-success">Insert</button>
+
+	</form>
+
+	<form action="/updateUtente" method="get">
+
+
+		<button type="submit" class="btn btn-success">Update</button>
+
+	</form>
+
+	<form action="/deleteUtente" method="get">
+
+		<div>
+			<label for="id">Utente id:</label> <input type="text" name="id">
+		</div>
+
+		<button type="submit" class="btn btn-success">Delete</button>
+
+	</form>
+
+
 </body>
