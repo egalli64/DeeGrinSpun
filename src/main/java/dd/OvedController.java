@@ -25,6 +25,14 @@ public class OvedController {
 	
 	
 
+	
+	@GetMapping("/elenco")
+	public String elenco() {
+		
+		return "/elenco";
+	}
+	
+	
 	@GetMapping("/insert")
 	public String inserisciRistoranti(@RequestParam(name = "id") long id, Model model) {
 		
@@ -32,6 +40,9 @@ public class OvedController {
 		devo ripassare i valori nell'oggetto repo con findAll */
 		return "/elenco";
 	}
+	
+	
+	
 	
 	
 	
