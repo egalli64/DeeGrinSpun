@@ -30,7 +30,7 @@ public class OvedController {
 		
 		model.addAttribute("restaurants", repo.findAll()); /* dopo aver cancellato l'elemento dall'oggetto,
 		devo ripassare i valori nell'oggetto repo con findAll */
-		return "/elencoRistoranti";
+		return "/elenco";
 	}
 	
 	
@@ -40,7 +40,7 @@ public class OvedController {
 		repo.deleteById(id);
 		model.addAttribute("restaurants", repo.findAll()); /* dopo aver cancellato l'elemento dall'oggetto,
 		devo ripassare i valori nell'oggetto repo con findAll */
-		return "/elencoRistoranti";
+		return "/elenco";
 	}
 	
 }
