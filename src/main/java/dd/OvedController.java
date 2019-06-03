@@ -24,10 +24,10 @@ public class OvedController {
 	@Autowired Green_RistorantiRepo repo;
 	
 	
-	@GetMapping("/elencoRistoranti")
+	@GetMapping("/elenco")
 	public String visualizzaRistoranti(Model model) {
 	model.addAttribute("restaurants", repo.findAll());
-	return "/elencoRistoranti";
+	return "/elenco";
 	}
 	
 	
