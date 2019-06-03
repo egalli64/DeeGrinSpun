@@ -33,7 +33,7 @@ h2 {
 	line-height: 0.75em;
 	vertical-align: -15%;
 }
-
+/*
 .fa-2x {
 	font-size: 2em;
 }
@@ -98,7 +98,7 @@ h2 {
 .fa.fa-pull-right {
 	margin-left: .3em;
 }
-/* Deprecated as of 4.4.0 */
+ Deprecated as of 4.4.0 
 .pull-right {
 	float: right;
 }
@@ -243,7 +243,7 @@ rotate
 	color: #ffffff;
 }
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-   readers do not read off random characters that represent icons */
+   readers do not read off random characters that represent icons 
 .fa-glass:before {
 	content: "\f000";
 }
@@ -2969,3 +2969,4 @@ rotate
 	overflow: visible;
 	clip: auto;
 }
+*/
