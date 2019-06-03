@@ -90,9 +90,71 @@ public class OvedController {
 	
 
 	
+	
+	
+
+@Autowired Green_UtentiRepo repo2;
+	
+	
 
 	
+	@GetMapping("/utente")
+	public String elencoUtenti(Model model) {
+		model.addAttribute("users", repo2.findAll()); 
+		return "/elencoUtente";
+	}
 	
+	
+	@GetMapping("/insertUtente")
+	public String insertUtente() { 
+		return "/inserisciUtente";
+	}
+	
+	
+	@GetMapping("/confirmUtente")
+	public String inserisciUtenti(@RequestParam(name = "id") long utenteId, 
+			@RequestParam(name = "nome") String nome, @RequestParam(name = "cognome") String cognome,
+			@RequestParam(name = "email") String email, 
+			@RequestParam(name = "password") String password,
+			@RequestParam(name="affidabilita") String affidabilita,
+			
+			Model model) {
+		Green_Utente uten= new Green_Utente(utenteId, nome, cognome, email, password,
+			affidabilita);
+		repo2.save(uten);
+		model.addAttribute("users", repo2.findAll()); /* dopo aver inserito l'elemento dall'oggetto,
+		devo ripassare i valori nell'oggetto repo con findAll */
+		return "/elencoUtente";
+	}
+	
+
+
+
+
+
+	
+	@GetMapping("/updateUtente")
+	public String updateUtente() {
+		
+		return "/modificaUtente";
+	}
+	
+	
+	@GetMapping("/modificaUtente")
+	public String modificaUtenti(@RequestParam(name = "id") long utenteId, 
+			@RequestParam(name = "nome") String nome, @RequestParam(name = "cognome") String cognome,
+			@RequestParam(name = "email") String email, 
+			@RequestParam(name = "password") String password,
+			@RequestParam(name="affidabilita") String affidabilita,
+			
+			Model model)  {
+		Green_Utente uten= new Green_Utente(utenteId, nome, cognome, email, password,
+			affidabilita);
+		repo2.save(uten);
+		model.addAttribute("users", repo2.findAll()); /* dopo aver inserito l'elemento dall'oggetto,
+		devo ripassare i valori nell'oggetto repo con findAll */
+		return "/elencoUtente";
+	}
 	
 	
 	
