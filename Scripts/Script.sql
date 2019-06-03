@@ -32,3 +32,4 @@ VALUES (7, 'Pizzeria da Tony', '42.70,14.56',100,'pizza','tonytony@live.it');
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
 VALUES (8, 'Pizzeria da Tommy', '40.75,13.56',100,'pizza','tommasino@live.it');
+
