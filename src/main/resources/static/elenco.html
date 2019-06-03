@@ -9,20 +9,22 @@
 
 <body>
 	<p>
-		Countries as string: <span th:text=" ${restaurants}">[]</span>
+		Restaurants as string: <span th:text=" ${restaurants}">[]</span>
 	</p>
 	<p>Restaurants in table</p>
 
 	<table>
 		<tr>
-			<th>ID</th>
+			<th>RISTORANTE_ID</th>
 			<th>NOME</th>
-			<th>Azioni</th>
+			<th>POSIZIONE</th>
 		</tr>
 		<tr th:each="cur: ${restaurants}">
 			<td th:text="${cur.ristoranteId}">1</td>
 			<td th:text="${cur.nome}">Trattoria</td>
 			<td th:text="${cur.posizione}">
+			
+			<br>
 			
 			<form action="/delete"
 					method="get">
@@ -34,6 +36,9 @@
 					
 					<button type="submit">Delete</button>
 				</form>
+				
+				
+				
 				<form action="/insert" method="get">
 				
 					<button type="submit">Insert<</button>
