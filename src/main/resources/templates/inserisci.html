@@ -8,11 +8,7 @@
 </head>
 
 <body>
-	<p>
-		Restaurants as string: <span th:text=" ${restaurants}">[]</span>
-	</p>
-	<p>Restaurants in table</p>
-
+	<form action="/confirm" method="get">
 	<table>
 		<tr>
 			<th>RISTORANTE_ID</th>
@@ -23,7 +19,7 @@
 			<th>EMAIL</th>
 			<th></th>
 		</tr>
-		<tr th:each="cur: ${restaurants}">
+		<tr>
 				<td>
 				<label for="id">Restaurant id:</label>
 <input type="text"  name="id">
@@ -60,17 +56,17 @@
 			
 	
 				
-				<form action="/inserisci" method="get">
 				
-					<button type="submit">Insert</button>
-				</form>
-
+					<button type="submit">Confirm</button>
+			
 
 			</td>
+				</table>
+			</form>
 			
 			
 			
 		
-	</table>
+
 
 </body>

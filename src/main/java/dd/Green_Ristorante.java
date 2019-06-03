@@ -25,7 +25,17 @@ private String tipoCucina;
 private String email;
 
 
+
+
+
+
+
+
 // costruttore
+public Green_Ristorante() {
+	super();
+}
+
 public Green_Ristorante(long ristoranteId, String nome, String posizione, long postiDisponibili, String tipoCucina,
 		String email) {
 	super();

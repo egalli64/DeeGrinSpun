@@ -39,7 +39,7 @@ public class OvedController {
 	}
 	
 	
-	@GetMapping("/inserisci")
+	@GetMapping("/confirm")
 	public String inserisciRistoranti(@RequestParam(name = "id") long ristoranteId, 
 			@RequestParam(name = "nome") String nome, @RequestParam(name = "posizione") String posizione,
 			@RequestParam(name = "postiDisponibili") long postiDisponibili, 
@@ -49,7 +49,8 @@ public class OvedController {
 			Model model) {
 		Green_Ristorante risto= new Green_Ristorante(ristoranteId, nome, posizione, postiDisponibili,  tipoCucina,
 			email);
-		model.addAttribute("restaurants", risto); /* dopo aver inserito l'elemento dall'oggetto,
+		repo.save(risto);
+		model.addAttribute("restaurants", repo.findAll()); /* dopo aver inserito l'elemento dall'oggetto,
 		devo ripassare i valori nell'oggetto repo con findAll */
 		return "/elenco";
 	}
