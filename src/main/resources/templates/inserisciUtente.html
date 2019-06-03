@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- my hello page -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>Thymeleaf</title>
+</head>
+
+<body>
+	
+	<table>
+		<tr>
+			<th>UTENTE_ID</th>
+			<th>NOME</th>
+			<th>COGNOME</th>
+			<th>EMAIL</th>
+			<th>USER_ID</th>
+				<td>PASSWORD</td>
+			<th>AFFIDABILITA'</th>
+			
+		</tr>
+		<tr>
+		<form action="/confirmUtente" method="get">
+				<td>
+				<label for="utenteId">Utente id:</label>
+<input type="text"  name="utenteId">
+
+				
+				</td>
+			<td >
+
+<label for="nome">Nome:</label>
+<input type="text"  name="nome">
+
+</td>
+			<td >
+			<label for="cognome">Cognome:</label>
+<input type="text"  name="cognome">
+
+			</td>
+			<td>
+			<label for="postiDisponibili">Email</label>
+<input type="text"  name="postiDisponibili">
+
+			</td>
+			<td>
+			<label for="userId">User id</label>
+<input type="text"  name="userId">
+
+			</td>
+			
+			<td>
+			<label for="password">Password user</label>
+<input type="text"  name="password">
+
+			</td>
+			
+			<td>
+			<label for="affidabilita">Affidabilità</label>
+<input type="text"  name="affidabilita">
+
+			</td>
+			<td>
+			
+	
+				
+				
+					<button type="submit">Confirm</button>
+			
+
+			</td>
+				</form>
+				</tr>
+				</table>
+		
+			
+			
+			
+		
+
+
+</body>

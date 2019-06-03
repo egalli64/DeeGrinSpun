@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- my hello page -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>Thymeleaf</title>
+</head>
+
+<body>
+
+	<p>Utenti in table</p>
+
+
+				
+					<button type="submit">Insert</button>
+	<table>
+		<tr>
+			<th>UTENTE_ID</th>
+			<th>NOME</th>
+			<th>COGNOME</th>
+			<th>EMAIL</th>
+			<th>USER_ID</th>
+			<th>AFFIDABILITA'</th>
+			
+		</tr>
+		<tr th:each="cur: ${utents}">
+				<td th:text="${cur.utenteId}">1</td>
+			<td th:text="${cur.nome}">Trattoria</td>
+			<td th:text="${cur.cognome}"></td>
+			<td th:text="${cur.email}"></td>
+			<td th:text="${cur.userId}"></td>
+			<td th:text="${cur.password}"></td>
+			<td th:text="${cur.affidabilita}"></td>
+			<td>
+			
+		
+			
+
+				
+				
+
+
+			</td>
+			
+			
+			
+		
+	</table>
+
+		<form action="/insertUtente" method="get">
+	
+					
+					<button type="submit">Insert</button>
+				
+				</form>	
+	
+	<form action="/updateUtente" method="get">
+	
+					
+					<button type="submit">Update</button>
+				
+				</form>	
+					
+					<form action="/deleteUtente"
+					method="get">
+					
+					<div>
+<label for="id">Utente id:</label>
+<input type="text"  name="id">
+</div>
+					
+					<button type="submit">Delete</button>
+				
+				</form>
+
+							
+</body>
