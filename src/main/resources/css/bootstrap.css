@@ -13,9 +13,7 @@ html {
 body {
   margin: 0;
 }
-th, td {
-  border-bottom: 1px solid #ddd;
-}
+
 article,
 aside,
 details,
