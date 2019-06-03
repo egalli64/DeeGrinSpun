@@ -8,11 +8,12 @@
 </head>
 
 <body>
-	<p>
-		Restaurants as string: <span th:text=" ${restaurants}">[]</span>
-	</p>
+
 	<p>Restaurants in table</p>
 
+
+				
+					<button type="submit">Insert</button>
 	<table>
 		<tr>
 			<th>RISTORANTE_ID</th>
@@ -31,25 +32,31 @@
 			<td th:text="${cur.tipoCucina}"></td>
 			<td th:text="${cur.email}"></td>
 			<td>
-			<div>
+			
+		
+			
+	<form action="/insert" method="get">
+	
+					
+					<button type="submit">Insert</button>
+				
+				</form>	
+					
+					<form action="/delete"
+					method="get">
+					
+					<div>
 <label for="id">Restaurant id:</label>
 <input type="text"  name="id">
 </div>
-
-<form action="/delete"
-					method="get">
-					
-					
 					
 					<button type="submit">Delete</button>
+				
 				</form>
+
 				
 				
 				
-				<form action="/insert" method="get">
-				
-					<button type="submit">Insert</button>
-				</form>
 
 
 			</td>
@@ -59,4 +66,5 @@
 		
 	</table>
 
+				
 </body>
