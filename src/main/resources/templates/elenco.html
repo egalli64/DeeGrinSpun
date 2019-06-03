@@ -22,7 +22,7 @@
 			<th>POSTI DISPONIBILI</th>
 			<th>TIPO CUCINA</th>
 			<th>EMAIL</th>
-			<th></th>
+			
 		</tr>
 		<tr th:each="cur: ${restaurants}">
 				<td th:text="${cur.ristoranteId}">1</td>
@@ -35,7 +35,19 @@
 			
 		
 			
-	<form action="/insert" method="get">
+
+				
+				
+
+
+			</td>
+			
+			
+			
+		
+	</table>
+
+		<form action="/insert" method="get">
 	
 					
 					<button type="submit">Insert</button>
@@ -61,17 +73,5 @@
 				
 				</form>
 
-				
-				
-				
-
-
-			</td>
-			
-			
-			
-		
-	</table>
-
-				
+							
 </body>
