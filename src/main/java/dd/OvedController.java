@@ -25,7 +25,7 @@ public class OvedController {
 	
 	
 
-	@GetMapping("/inser")
+	@GetMapping("/insert")
 	public String inserisciRistoranti(@RequestParam(name = "id") long id, Model model) {
 		
 		model.addAttribute("restaurants", repo.findAll()); /* dopo aver cancellato l'elemento dall'oggetto,
