@@ -18,11 +18,17 @@
 			<th>RISTORANTE_ID</th>
 			<th>NOME</th>
 			<th>POSIZIONE</th>
+			<th>POSTI DISPONIBILI</th>
+			<th>TIPO CUCINA</th>
+			<th>EMAIL</th>
 		</tr>
 		<tr th:each="cur: ${restaurants}">
-			<td th:text="${cur.ristoranteId}">1</td>
+				<td th:text="${cur.ristoranteId}">1</td>
 			<td th:text="${cur.nome}">Trattoria</td>
-			<td th:text="${cur.posizione}">
+			<td th:text="${cur.posizione}"></td>
+			<td th:text="${cur.postiDisponibili}"></td>
+			<td th:text="${cur.tipoCucina}"></td>
+			<td th:text="${cur.email}"></td>
 			
 			<br>
 			
