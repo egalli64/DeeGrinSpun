@@ -34,9 +34,22 @@ public class OvedController {
 	
 	
 	@GetMapping("/insert")
-	public String inserisciRistoranti(@RequestParam(name = "id") long id, Model model) {
-		
-		model.addAttribute("restaurants", repo.findAll()); /* dopo aver cancellato l'elemento dall'oggetto,
+	public String insert() { 
+		return "/inserisci";
+	}
+	
+	
+	@GetMapping("/inserisci")
+	public String inserisciRistoranti(@RequestParam(name = "id") long ristoranteId, 
+			@RequestParam(name = "nome") String nome, @RequestParam(name = "posizione") String posizione,
+			@RequestParam(name = "postiDisponibili") long postiDisponibili, 
+			@RequestParam(name = "tipoCucina") String tipoCucina,
+			@RequestParam(name="email") String email,
+			
+			Model model) {
+		Green_Ristorante risto= new Green_Ristorante(ristoranteId, nome, posizione, postiDisponibili,  tipoCucina,
+			email);
+		model.addAttribute("restaurants", risto); /* dopo aver inserito l'elemento dall'oggetto,
 		devo ripassare i valori nell'oggetto repo con findAll */
 		return "/elenco";
 	}

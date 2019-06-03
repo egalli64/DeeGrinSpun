@@ -25,10 +25,23 @@ private String tipoCucina;
 private String email;
 
 
+// costruttore
+public Green_Ristorante(long ristoranteId, String nome, String posizione, long postiDisponibili, String tipoCucina,
+		String email) {
+	super();
+	setristoranteId(ristoranteId);
+	setNome(nome);
+	setPosizione(posizione);
+	setPostiDisponibili(postiDisponibili);
+	setTipoCucina(tipoCucina);
+	setEmail(email);
+}
+
 //get set to string
 public long getRistoranteId() {
 	return ristoranteId;
 }
+
 public void setristoranteId(long ristoranteId) {
 	this.ristoranteId = ristoranteId;
 }

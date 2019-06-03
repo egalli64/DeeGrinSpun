@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- my hello page -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>Thymeleaf</title>
+</head>
+
+<body>
+	<p>
+		Restaurants as string: <span th:text=" ${restaurants}">[]</span>
+	</p>
+	<p>Restaurants in table</p>
+
+	<table>
+		<tr>
+			<th>RISTORANTE_ID</th>
+			<th>NOME</th>
+			<th>POSIZIONE</th>
+			<th>POSTI DISPONIBILI</th>
+			<th>TIPO CUCINA</th>
+			<th>EMAIL</th>
+			<th></th>
+		</tr>
+		<tr th:each="cur: ${restaurants}">
+				<td>
+				<label for="id">Restaurant id:</label>
+<input type="text"  name="id">
+
+				
+				</td>
+			<td >
+
+<label for="nome">Nome:</label>
+<input type="text"  name="nome">
+
+</td>
+			<td >
+			<label for="posizione">Posizione:</label>
+<input type="text"  name="posizione">
+
+			</td>
+			<td>
+			<label for="postiDisponibili">Posti Disponibili</label>
+<input type="text"  name="postiDisponibili">
+
+			</td>
+			<td>
+			<label for="tipoCucina">Tipo Cucina</label>
+<input type="text"  name="tipoCucina">
+
+			</td>
+			<td>
+			<label for="email">Email:</label>
+<input type="text"  name="email">
+
+			</td>
+			<td>
+			
+	
+				
+				<form action="/inserisci" method="get">
+				
+					<button type="submit">Insert</button>
+				</form>
+
+
+			</td>
+			
+			
+			
+		
+	</table>
+
+</body>
