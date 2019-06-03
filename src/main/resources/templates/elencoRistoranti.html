@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- my hello page -->
+<html  xmlns:th="http://www.thymeleaf.org">
+
+<head >
+<meta charset="utf-8">
+<title>Thymeleaf</title>
+</head>
+
+<body>
+<p>Countries as string: 
+<span th:text=" ${restaurants}">[]</span>
+</p>
+<p>Restaurants in table</p>
+
+<table>
+<tr>
+<th>ID</th>
+<th>NAME</th>
+<th>REGION ID</th>
+</tr>
+<tr th:each="cur: ${restaurants}">
+<td th:text="${cur.ristoranteId}">1</td>
+<td th:text="${cur.nome}">Trattoria</td>
+<td th:text="${cur.posizione}">2</td>
+</tr>
+
+</body>
