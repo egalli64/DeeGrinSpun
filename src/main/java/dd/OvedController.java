@@ -24,29 +24,20 @@ public class OvedController {
 	@Autowired Green_RistorantiRepo repo;
 	
 	
-	@GetMapping("/ristoranti")
+	@GetMapping("/elencoRistoranti")
 	public String visualizzaRistoranti(Model model) {
 	model.addAttribute("restaurants", repo.findAll());
-	return "/ristoranti";
+	return "/elencoRistoranti";
 	}
 	
 	
-	@GetMapping("/ristoranti")
-	public String modificaRistoranti(Model model) {
-	model.addAttribute("restaurants", repo.save(S entity));
-	return "/ristoranti";
-	}
 	
-	@GetMapping("/ristoranti")
-	public String inserisciRistoranti(Model model) {
-	model.addAttribute("restaurants", repo.save(S entity));
-	return "/ristoranti";
-	}
 	
-	@GetMapping("/ristoranti")
-	public String eliminaRistoranti(Model model) {
-	model.addAttribute("restaurants", repo.deleteById(ID));
-	return "/ristoranti";
+	@GetMapping("/delete")
+	public String eliminaRistoranti(@RequestParam(name = "id") long id, Model model) {
+		repo.deleteById(id);
+		model.addAttribute("restaurants", repo.findAll());
+		return "/elencoRistoranti";
 	}
 	
 }

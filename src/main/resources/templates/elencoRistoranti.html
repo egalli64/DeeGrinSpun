@@ -22,12 +22,21 @@
 		<tr th:each="cur: ${restaurants}">
 			<td th:text="${cur.ristoranteId}">1</td>
 			<td th:text="${cur.nome}">Trattoria</td>
-			<td th:text="${cur.posizione}"><form action="/action"
-					method="post">
+			<td th:text="${cur.posizione}">
+			
+			<form action="/delete"
+					method="get">
+					
+					<div>
+<label for="id">Restaurant id:</label>
+<input type="text"  name="id">
+</div>
+					
 					<button type="submit">Delete</button>
 				</form>
-				<form action="/action" method="post">
-					<button type="submit">Set</button>
+				<form action="/insert" method="get">
+				
+					<button type="submit">Insert<</button>
 				</form></td>
 		</tr>
 	</table>
