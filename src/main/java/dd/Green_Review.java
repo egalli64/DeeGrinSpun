@@ -30,7 +30,5 @@ public class Green_Review{
 	private Green_Ristorante green_ristorante;
 	
 	
-	
-	
 }
 

@@ -21,7 +21,7 @@ public class OvedController {
 	
 	
 	@Autowired Green_RistorantiRepo repo;
-	@Autowired Green_RistorantiRepo repoModifica;
+	@Autowired Green_UtentiRepo repoModifica;
 	
 	//-------------- ACCESSO UTENTI---------------
 	@GetMapping("/elencoView")
