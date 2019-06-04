@@ -4,80 +4,64 @@
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1,
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,
 shrink-to-fit=no">
 
 
 <link rel="stylesheet"
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
-<body style="text-align:center" class="container-fluid ">
-
+<body style="text-align: center" class="container-fluid ">
+<h2>Modifica Ristorante:</h2>
 	<form action="/modifica" method="get">
-	
-	<table class="table table-striped">
-		<tr>
-			<th>RISTORANTE_ID</th>
-			<th>NOME</th>
-			<th>POSIZIONE</th>
-			<th>POSTI DISPONIBILI</th>
-			<th>TIPO CUCINA</th>
-			<th>EMAIL</th>
-			<th>OPZIONI</th>
-		</tr>
-		<tr>
-		
-		
-		
-		
-		<tr th:each="cur: ${restaurant}"> <!-- NB QUI è RESTAURANT E NON RESTAURANTS -->
-				<td id="id" >
-				<input type="text" name="id" th:value="${cur.ristoranteId}" maxlength="30" />
+
+		<table class="table table-striped">
+			<tr>
+				<th>RISTORANTE_ID</th>
+				<th>NOME</th>
+				<th>POSIZIONE</th>
+				<th>POSTI DISPONIBILI</th>
+				<th>TIPO CUCINA</th>
+				<th>EMAIL</th>
+				<th></th>
+			</tr>
+			
+			<tr th:each="cur: ${restaurant}">
+				<!-- NB QUI è RESTAURANT E NON RESTAURANTS -->
+				<td id="id"><input type="text" name="id"
+					th:value="${cur.ristoranteId}" maxlength="30" readonly></td>
+
+
+
+				<td id="nome"><input type="text" name="nome"
+					th:value="${cur.nome}" maxlength="30"></input></td>
+
+
+				<td id=posizione><input type="text" name="posizione"
+					th:value="${cur.posizione}" maxlength="30"></input></td>
+
+				<td id="postiDisponibili"><input type="text"
+					name="postiDisponibili" th:value="${cur.postiDisponibili}"
+					maxlength="30"></input></td>
+
+				<td id="tipoCucina"><input type="text" name="tipoCucina"
+					th:value="${cur.tipoCucina}" maxlength="30"></input></td>
+
+				<td id="email"><input type="text" name="email"
+					th:value="${cur.email}" maxlength="30"></input></td>
+				<td>
+				<button type="submit" class="btn btn-success">Confirm</button>
 				</td>
-				
-				
-				
-			<td id="nome" >
-			<input type="text" name="nome" th:value="${cur.nome}" maxlength="30" ></input>
-			</td>
-			
 
-			<td  id=posizione >
-			<input type="text" name="posizione" th:value="${cur.posizione}" maxlength="30" ></input>
-			</td>
-			
-			<td id="postiDisponibili" >
-				<input type="text" name="postiDisponibili" th:value="${cur.postiDisponibili}" maxlength="30" ></input>
-			</td>
-			
-			<td id="tipoCucina" >
-				<input type="text" name="tipoCucina" th:value="${cur.tipoCucina}" maxlength="30" ></input>
-			</td>
-			
-			<td  id="email" >
-							<input type="text" name="email" th:value="${cur.email}" maxlength="30" ></input>
-			
-			</td>
-			<td>
-			
-		
-			<td>
-			
-	
-				
-					<button type="submit" class="btn btn-success">Confirm</button>
-		
+			</tr>
+		</table>
+	</form>
 
-			</td>
-				
-				</tr>
-				</table>
-		</form>
-			
-			
-			
-		
+
+
+
 
 
 </body>
