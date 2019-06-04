@@ -3,40 +3,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+
+<title>elenco</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1,
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,
 shrink-to-fit=no">
-<title>Thymeleaf</title>
-<link rel="stylesheet"
-type="text/css"
-href="css\fontAwesome.css"/>
-<link rel="stylesheet"
-type="text/css"
-href="css\bootstrap-theme.css"/>
-<link rel="stylesheet"
-type="text/css"
-href="css\bootstrap-theme.min.css"/>
-<link rel="stylesheet"
-type="text/css"
-href="css\bootstrap.css"/>
-<link rel="stylesheet"
-type="text/css"
-href="css\bootstrap.min.css"/>
-<link rel="stylesheet"
-type="text/css"
-href="css\templatemo-style.css"/>
 
 <link rel="stylesheet"
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body style="text-align:center" class="container-fluid ">
+<body style="text-align: center" class="container-fluid ">
 
-	<h1>Restaurants in table</h1>
+	<h1>Ecco i nostri Ristoranti:</h1>
 
 
-				
-					
+
+
 	<table class="table table-striped">
 		<tr>
 			<th>RISTORANTE_ID</th>
@@ -45,60 +32,55 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			<th>POSTI DISPONIBILI</th>
 			<th>TIPO CUCINA</th>
 			<th>EMAIL</th>
-			<th>OPZIONI</th>
+			<th></th>
 		</tr>
-			
-			
-		
-		
-		<tr th:each="cur: ${restaurants}">
-				
-				<td th:text="${cur.ristoranteId}" id="id" >1</td>
-			<td th:text="${cur.nome}" id="nome" >Trattoria</td>
-			<td th:text="${cur.posizione}" id=posizione ></td>
-			<td th:text="${cur.postiDisponibili}" id="postiDisponibili"></td>
-			<td th:text="${cur.tipoCucina}" id="tipoCucina" ></td>
-			<td th:text="${cur.email}" id="email" ></td>
-			<td>
-			
-		<a th:href="@{/update(id=${cur.ristoranteId})}">
-		
-<button type="submit" class="btn btn-success">Update</button>
-				
-				</a>	
 
-<a th:href="@{/delete(id=${cur.ristoranteId})}">
+
+
+
+		<tr th:each="cur: ${restaurants}">
+
+			<td th:text="${cur.ristoranteId}" id="id"></td>
+			<td th:text="${cur.nome}" id="nome"></td>
+			<td th:text="${cur.posizione}" id=posizione></td>
+			<td th:text="${cur.postiDisponibili}" id="postiDisponibili"></td>
+			<td th:text="${cur.tipoCucina}" id="tipoCucina"></td>
+			<td th:text="${cur.email}" id="email"></td>
+			<td><a th:href="@{/update(id=${cur.ristoranteId})}">
+
+					<button type="submit" class="btn btn-success">Update</button>
+
+			</a> <a th:href="@{/delete(id=${cur.ristoranteId})}">
 					<button type="submit" class="btn btn-success">Delete</button>
-					</a>
-			</td>
-	
-			</tr>
-			
-			
-		
+			</a></td>
+
+		</tr>
+
+
+
 	</table>
 
-		
-	
 
-	
-					
-				
-					
-				
-				
-					
-					<form action="/insert" method="get">
-	
-					
-					<button type="submit" class="btn btn-success">Insert</button>
-				
-				</form>	
-					
-					
-					
-					
-				
 
-							
+
+
+
+
+
+
+
+
+	<form action="/insert" method="get">
+
+
+		<button type="submit" class="btn btn-success">Insert</button>
+
+	</form>
+
+
+
+
+
+
+
 </body>
