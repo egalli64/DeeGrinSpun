@@ -30,6 +30,20 @@ public class OvedController {
 			return "/elencoView";
 	}
 	
+	
+	@GetMapping("/feedback")
+	public String feedback() {
+ 
+			return "/feedback";
+	}
+	
+	
+	@GetMapping("/confirmFeedback")
+	 public String confirmFeedback(Model model) {
+		model.addAttribute("restaurants", repo.findAll()); 
+			return "/elencoView";
+	}
+	
 	// ---------- ACCESSO ADMIN ---------------
 	@GetMapping("/AccessoAdmin")
 	public String admin() {
