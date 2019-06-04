@@ -1,4 +1,5 @@
 DROP TABLE green_ristoranti;
+CREATE SEQUENCE GREEN_RISTORANTI_SEQ;
 create table green_ristoranti (
 ristorante_id integer
 constraint ristoranti_pk primary key,
