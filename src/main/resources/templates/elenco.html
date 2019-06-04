@@ -36,7 +36,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 
 				
-					
+				<form action="/update" method="get">	
 	<table class="table table-striped">
 		<tr>
 			<th>RISTORANTE_ID</th>
@@ -45,44 +45,54 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			<th>POSTI DISPONIBILI</th>
 			<th>TIPO CUCINA</th>
 			<th>EMAIL</th>
-			
+			<th>OPZIONI</th>
 		</tr>
+			
+			
+		
+		
 		<tr th:each="cur: ${restaurants}">
-				<td th:text="${cur.ristoranteId}">1</td>
-			<td th:text="${cur.nome}">Trattoria</td>
-			<td th:text="${cur.posizione}"></td>
-			<td th:text="${cur.postiDisponibili}"></td>
-			<td th:text="${cur.tipoCucina}"></td>
-			<td th:text="${cur.email}"></td>
+				
+				<td th:text="${cur.ristoranteId}" id="id" name="id">1</td>
+			<td th:text="${cur.nome}" id="nome" name="nome">Trattoria</td>
+			<td th:text="${cur.posizione}" id=posizione name="posizione"></td>
+			<td th:text="${cur.postiDisponibili}" id="postiDisponibili" name="postiDisponibili"></td>
+			<td th:text="${cur.tipoCucina}" id="tipoCucina" name="tipoCucina"></td>
+			<td th:text="${cur.email}" id="email" name="email"></td>
 			<td>
 			
 		
 			
-
+<button type="submit" class="btn btn-success">Update</button>
 				
-				
+					
 
 
 			</td>
-			
+	
+			</tr>
 			
 			
 		
 	</table>
+</form>	
+		
+	
 
-		<form action="/insert" method="get">
+	
+					
+				
+					
+				
+				
+					
+					<form action="/insert" method="get">
 	
 					
 					<button type="submit" class="btn btn-success">Insert</button>
 				
 				</form>	
-	
-	<form action="/update" method="get">
-	
 					
-					<button type="submit" class="btn btn-success">Update</button>
-				
-				</form>	
 					
 					<form action="/delete"
 					method="get">

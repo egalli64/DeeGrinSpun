@@ -19,7 +19,7 @@ public class OvedController {
 	
 	
 	@Autowired Green_RistorantiRepo repo;
-	
+	@Autowired Green_RistorantiRepo repoModifica;
 	
 
 	
@@ -54,8 +54,17 @@ public class OvedController {
 	
 	
 	@GetMapping("/update")
-	public String updateRistoranti() {
-		
+	public String updateRistoranti(@RequestParam(name = "id") long ristoranteId, 
+			@RequestParam(name = "nome") String nome, @RequestParam(name = "posizione") String posizione,
+			@RequestParam(name = "postiDisponibili") long postiDisponibili, 
+			@RequestParam(name = "tipoCucina") String tipoCucina,
+			@RequestParam(name="email") String email,
+			
+			Model model) {
+		Green_Ristorante risto= new Green_Ristorante(ristoranteId, nome, posizione, postiDisponibili,  tipoCucina,
+				email);
+		repoModifica.save(risto);
+		model.addAttribute("restaurant", repoModifica.findAll());
 		return "/modifica";
 	}
 	
