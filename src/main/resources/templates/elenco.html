@@ -67,7 +67,9 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 				
 				</a>	
 
-
+<a th:href="@{/delete(id=${cur.ristoranteId})}">
+					<button type="submit" class="btn btn-success">Delete</button>
+					</a>
 			</td>
 	
 			</tr>
@@ -94,17 +96,9 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 				</form>	
 					
 					
-					<form action="/delete"
-					method="get">
 					
-					<div>
-<label for="id">Restaurant id:</label>
-<input type="text"  name="id">
-</div>
 					
-					<button type="submit" class="btn btn-success">Delete</button>
 				
-				</form>
 
 							
 </body>

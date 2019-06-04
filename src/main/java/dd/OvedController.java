@@ -73,16 +73,20 @@ public class OvedController {
 	
 	
 	@GetMapping("/modifica")
-	public String modificaRistoranti(@RequestParam(name = "id") long ristoranteId, 
-			@RequestParam(name = "nome") String nome, @RequestParam(name = "posizione") String posizione,
-			@RequestParam(name = "postiDisponibili") long postiDisponibili, 
-			@RequestParam(name = "tipoCucina") String tipoCucina,
-			@RequestParam(name="email") String email,
+	public String modificaRistoranti(@RequestParam long id, Model model) {
+		
+		Optional<Green_Ristorante> opt= repo.findById(id); /* ritorna un optional di ristorante 
+		(l'OPTIONAL serve per poter lavorare anche con i null. Optional è una collezione,
+		e lo dobbiamo importare. */
+		
+		
+		if(opt.isPresent()) { // se opt non è null
 			
-			Model model) {
-		Green_Ristorante risto= new Green_Ristorante(ristoranteId, nome, posizione, postiDisponibili,  tipoCucina,
-			email);
-		repo.save(risto);
+			model.addAttribute("restaurant", opt.get()); // opt.get passa il valore nella chiave "restaurant"
+			repo.save(opt.get());		
+		}
+		
+		
 		model.addAttribute("restaurants", repo.findAll()); /* dopo aver inserito l'elemento dall'oggetto,
 		devo ripassare i valori nell'oggetto repo con findAll */
 		return "/elenco";
