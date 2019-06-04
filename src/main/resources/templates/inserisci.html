@@ -4,16 +4,30 @@
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1,
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,
 shrink-to-fit=no">
 <title>Inserisci</title>
 
+<<<<<<< HEAD
 <link rel="stylesheet"
 href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+=======
+<link rel="stylesheet" type="text/css" href="css\fontAwesome.css" />
+<link rel="stylesheet" type="text/css" href="css\bootstrap-theme.css" />
+<link rel="stylesheet" type="text/css"
+	href="css\bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="css\bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css\bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css\templatemo-style.css" />
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+>>>>>>> branch 'master' of https://github.com/egalli64/DeeGrinSpun.git
 </head>
 
-<body style="text-align:center" class="container-fluid ">
-	
+<body style="text-align: center" class="container-fluid ">
+
 	<table class="table table-striped">
 		<tr>
 			<th>RISTORANTE_ID</th>
@@ -25,56 +39,36 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			<th></th>
 		</tr>
 		<tr>
-		<form action="/confirm" method="get">
+			<form action="/confirm" method="get">
+				<td><label for="id">Restaurant id:</label> <input type="text"
+					name="id"></td>
+				<td><label for="nome">Nome:</label> <input type="text"
+					name="nome"></td>
+				<td><label for="posizione">Posizione:</label> <input
+					type="text" name="posizione"></td>
+				<td><label for="postiDisponibili">Posti Disponibili</label> <input
+					type="text" name="postiDisponibili"></td>
+				<td><label for="tipoCucina">Tipo Cucina</label> <input
+					type="text" name="tipoCucina"></td>
+				<td><label for="email">Email:</label> <input type="text"
+					name="email"></td>
 				<td>
-				<label for="id">Restaurant id:</label>
-<input type="text"  name="id">
 
-				
-				</td>
-			<td >
 
-<label for="nome">Nome:</label>
-<input type="text"  name="nome">
 
-</td>
-			<td >
-			<label for="posizione">Posizione:</label>
-<input type="text"  name="posizione">
 
-			</td>
-			<td>
-			<label for="postiDisponibili">Posti Disponibili</label>
-<input type="text"  name="postiDisponibili">
-
-			</td>
-			<td>
-			<label for="tipoCucina">Tipo Cucina</label>
-<input type="text"  name="tipoCucina">
-
-			</td>
-			<td>
-			<label for="email">Email:</label>
-<input type="text"  name="email">
-
-			</td>
-			<td>
-			
-	
-				
-				
 					<button type="submit" class="btn btn-success">Confirm</button>
-			
 
-			</td>
-				</form>
-				</tr>
-				</table>
-		
-			
-			
-			
-		
+
+				</td>
+			</form>
+		</tr>
+	</table>
+
+
+
+
+
 
 
 </body>
