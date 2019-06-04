@@ -59,12 +59,13 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			<td th:text="${cur.postiDisponibili}" id="postiDisponibili"></td>
 			<td th:text="${cur.tipoCucina}" id="tipoCucina" ></td>
 			<td th:text="${cur.email}" id="email" ></td>
-			<td th:text="${cur.opzioni}" >
+			<td >
 		
-			
-						<button type="submit" class="btn btn-success">Recensisci</button></td>
+			<form action="elencoView" method="get">
+						<button type="submit" class="btn btn-success">Recensisci</button>
+						</form></td>
 		
-	<td>
+	
 		</tr>
 			
 		
