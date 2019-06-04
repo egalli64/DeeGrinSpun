@@ -49,23 +49,36 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 		
 		
 		
-		<tr th:each="cur: ${restaurant}">
-				
-				<td th:text="${cur.ristoranteId}" id="id" >
+		<tr th:each="cur: ${restaurant}"> <!-- NB QUI è RESTAURANT E NON RESTAURANTS -->
+				<td id="id" >
+								<input type="text" name="id" value="${cur.ristoranteId}" maxlength="30" />
 				
 				1
 				</td>
-			<td th:text="${cur.nome}" id="nome" >
+				
+				
+				
+			<td id="nome" >
+			<input type="text" name="nome" value="${cur.nome}" maxlength="30" ></input>
 			Trattoria
 			</td>
-			<td th:text="${cur.posizione}" id=posizione >
-			</td>
-			<td th:text="${cur.postiDisponibili}" id="postiDisponibili" >
-			</td>
-			<td th:text="${cur.tipoCucina}" id="tipoCucina" >
 			
+
+			<td  id=posizione >
+			<input type="text" name="posizione" value="${cur.posizione}" maxlength="30" ></input>
 			</td>
+			
+			<td id="postiDisponibili" >
+				<input type="text" name="postiDisponibili" value="${cur.postiDisponibili}" maxlength="30" ></input>
+			</td>
+			
+			<td id="tipoCucina" >
+				<input type="text" name="tipoCucina" value="${cur.tipoCucina}" maxlength="30" ></input>
+			</td>
+			
 			<td th:text="${cur.email}" id="email" >
+							<input type="text" name="email" value="${cur.email}" maxlength="30" ></input>
+			
 			</td>
 			<td>
 			

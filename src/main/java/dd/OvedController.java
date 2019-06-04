@@ -1,6 +1,8 @@
 package dd;
 
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,12 +56,18 @@ public class OvedController {
 	
 	
 	@GetMapping("/update")
-	public String updateRistoranti(@RequestParam(name = "id") long ristoranteId,
+	public String updateRistoranti( @RequestParam Long id,Model model) {
+		
+		
+		Optional<Green_Ristorante> opt= repo.findById(id); /* ritorna un optional di ristorante 
+		(l'OPTIONAL serve per poter lavorare anche con i null. Optional è una collezione,
+		e lo dobbiamo importare. */
+		
+		if(opt.isPresent()) { // se opt non è null
 			
-			Model model) {
-		Green_Ristorante risto= new Green_Ristorante();
-		repoModifica.save(risto);
-		model.addAttribute("restaurant", repoModifica.findAll());
+			model.addAttribute("restaurant", opt.get()); // opt.get passa il valore nella chiave "restaurant"
+				
+		}
 		return "/modifica";
 	}
 	
