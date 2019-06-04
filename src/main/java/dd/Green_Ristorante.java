@@ -47,6 +47,17 @@ public Green_Ristorante(long ristoranteId, String nome, String posizione, long p
 	setEmail(email);
 }
 
+
+public Green_Ristorante(Green_Ristorante green) {
+	super();
+	setristoranteId(green.ristoranteId);
+	setNome(green.nome);
+	setPosizione(green.posizione);
+	setPostiDisponibili(green.postiDisponibili);
+	setTipoCucina(green.tipoCucina);
+	setEmail(green.email);
+}
+
 //get set to string
 public long getRistoranteId() {
 	return ristoranteId;
