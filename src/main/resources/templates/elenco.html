@@ -36,7 +36,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 
 				
-				<form action="/update" method="get">	
+					
 	<table class="table table-striped">
 		<tr>
 			<th>RISTORANTE_ID</th>
@@ -53,19 +53,20 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 		
 		<tr th:each="cur: ${restaurants}">
 				
-				<td th:text="${cur.ristoranteId}" id="id" name="id">1</td>
-			<td th:text="${cur.nome}" id="nome" name="nome">Trattoria</td>
-			<td th:text="${cur.posizione}" id=posizione name="posizione"></td>
-			<td th:text="${cur.postiDisponibili}" id="postiDisponibili" name="postiDisponibili"></td>
-			<td th:text="${cur.tipoCucina}" id="tipoCucina" name="tipoCucina"></td>
-			<td th:text="${cur.email}" id="email" name="email"></td>
+				<td th:text="${cur.ristoranteId}" id="id" >1</td>
+			<td th:text="${cur.nome}" id="nome" >Trattoria</td>
+			<td th:text="${cur.posizione}" id=posizione ></td>
+			<td th:text="${cur.postiDisponibili}" id="postiDisponibili"></td>
+			<td th:text="${cur.tipoCucina}" id="tipoCucina" ></td>
+			<td th:text="${cur.email}" id="email" ></td>
 			<td>
 			
 		
-			
+			<a th:href="@{/update/details(id=${update.ristoranteId},id=${update.nome},id=${update.posizione},
+			id=${postiDisponibili},id=${update.tipoCucina}, id=${update.email})}">
 <button type="submit" class="btn btn-success">Update</button>
 				
-					
+				</a>	
 
 
 			</td>
@@ -75,7 +76,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			
 		
 	</table>
-</form>	
+
 		
 	
 
