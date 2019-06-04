@@ -37,7 +37,6 @@ public class OvedController {
 			@RequestParam(name = "qualitaprezzo") long qualitaprezzo, 
 			@RequestParam(name = "password") long pulizia,
 			@RequestParam(name="commento") String commento,
-			
 			Model model) {
 	
 			return "/feedback";
