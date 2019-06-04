@@ -25,15 +25,22 @@ public class OvedController {
 	
 	//-------------- ACCESSO UTENTI---------------
 	@GetMapping("/elencoView")
-	public String user(Model model) {
-		model.addAttribute("restaurants", repo.findAll()); 
+	public String elencoView(Model model) {
+		model.addAttribute("restaurants", repo.findAll());
 			return "/elencoView";
 	}
 	
 	
 	@GetMapping("/feedback")
 	public String feedback() {
- 
+		
+	
+		reviews_id integer	constraint reviews_pk primary key,
+		servizio integer,
+		atmosfera integer,
+		qualitaprezzo integer,
+		pulizia integer,
+		commento varchar2(100));
 			return "/feedback";
 	}
 	
