@@ -23,7 +23,24 @@ public class OvedController {
 	@Autowired Green_RistorantiRepo repo;
 	@Autowired Green_RistorantiRepo repoModifica;
 	
-
+	
+	
+	// ---------- ACCESSO ADMIN ---------------
+	@GetMapping("/accesso")
+	public String admin(@RequestParam int user, @RequestParam int password, Model model) {
+		if(user==123456 && password==000000) {
+			return "/index2";
+		}
+		
+		else{
+			return "/accesso";
+		}
+	}
+	
+	
+	
+	
+// --------------------------- RISTORANTI CORRETTO ---------------------------------
 	
 	@GetMapping("/ristoratore")
 	public String elenco(Model model) {
@@ -106,12 +123,9 @@ public class OvedController {
 
 	
 	
-	
+	//-------------------------- UTENTI DA CORREGGERE ---------------------------------
 
 @Autowired Green_UtentiRepo repo2;
-	
-	
-
 	
 	@GetMapping("/utente")
 	public String elencoUtenti(Model model) {
