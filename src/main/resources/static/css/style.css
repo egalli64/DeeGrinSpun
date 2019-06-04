@@ -1,0 +1,10 @@
+body {
+	text-align: center;
+}
+h1{
+	font: bold 100px sans-serif;
+	color: green;
+}
+h2,h3,p{
+	color:green;
+}
