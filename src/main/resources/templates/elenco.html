@@ -61,9 +61,8 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			<td th:text="${cur.email}" id="email" ></td>
 			<td>
 			
+		<a th:href="@{/update(${cur.ristoranteId})}">
 		
-			<a th:href="@{/update/details(id=${update.ristoranteId},id=${update.nome},id=${update.posizione},
-			id=${postiDisponibili},id=${update.tipoCucina}, id=${update.email})}">
 <button type="submit" class="btn btn-success">Update</button>
 				
 				</a>	

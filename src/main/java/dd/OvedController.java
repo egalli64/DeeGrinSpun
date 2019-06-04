@@ -54,15 +54,10 @@ public class OvedController {
 	
 	
 	@GetMapping("/update")
-	public String updateRistoranti(@RequestParam(name = "id") long ristoranteId, 
-			@RequestParam(name = "nome") String nome, @RequestParam(name = "posizione") String posizione,
-			@RequestParam(name = "postiDisponibili") long postiDisponibili, 
-			@RequestParam(name = "tipoCucina") String tipoCucina,
-			@RequestParam(name="email") String email,
+	public String updateRistoranti(@RequestParam(name = "id") long ristoranteId,
 			
 			Model model) {
-		Green_Ristorante risto= new Green_Ristorante(ristoranteId, nome, posizione, postiDisponibili,  tipoCucina,
-				email);
+		Green_Ristorante risto= new Green_Ristorante();
 		repoModifica.save(risto);
 		model.addAttribute("restaurant", repoModifica.findAll());
 		return "/modifica";
