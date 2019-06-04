@@ -31,6 +31,13 @@ public class OvedController {
 	}
 	
 	
+	@GetMapping("/vedirecensioni")
+	public String vediRecensioni(Model model) {
+		model.addAttribute("restaurants", repo.findAll());
+			return "/vedirecensioni";
+	}
+	
+	
 	@GetMapping("/feedback")
 	public String feedback(/*@RequestParam(name = "id") long reviewsId, 
 			@RequestParam(name = "servizio") long servizio, @RequestParam(name = "atmosfera") long atmosfera,
