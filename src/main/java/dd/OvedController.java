@@ -31,6 +31,13 @@ public class OvedController {
 	}
 	
 	// ---------- ACCESSO ADMIN ---------------
+	@GetMapping("/AccessoAdmin")
+	public String admin() {
+		
+	return "/AccessoAdmin";
+	}
+	
+	
 	@GetMapping("/accesso")
 	public String admin(@RequestParam String user, @RequestParam String password) {
 		if(user.equals("123456") && password.equals("123456")) {
