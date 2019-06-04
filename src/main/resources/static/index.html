@@ -11,42 +11,55 @@ shrink-to-fit=no">
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body style="text-align: center">
+<body>
 	<div>
 		<h1>DeGrinSpun</h1>
+		<img src="img/tagliere1.jpg" class="img-fluid">
 	</div>
+	<hr>
 	<h2>Benvenuto</h2>
 	<h3>completa i campi per accedere al tuo profilo</h3>
+	<hr>
 
 
 	<form action="EntraUt.html" method="post">
-		<div>
-			<label for="name">Nome:</label> <input type="text" id="userName"
-				name="sender">
-		</div>
-		<div>
-			<label for="msg">Password:</label> <input type="password"
-				id="Password" name="sender">
-		</div>
-		<p>entra come:</p>
-		<!--  <input type="radio" id="favU" name="fav" value="Utente" checked />
-<label for="favU">Utente</label>
-<input type="radio" id="favR" name="fav" value="Ristoratore" />
-<label for="favR">Ristoratore</label>-->
 
+		<table align="center">
+			<tr>
+				<th></th>
+				<th><div>
+						<label for="name">Nome:</label> <input type="text" id="userName"
+							name="sender">
+					</div></th>
 
-		<div>
-			<form action="/utente" method="get">
-				<button type="submit" class="btn btn-success">Utente</button>
-			</form>
-		</div>
+				<th><div>
+						<label for="msg">Password:</label> <input type="password"
+							id="Password" name="sender">
+					</div></th>
+
+			</tr>
+			<tr>
+				<th><p>entra come:</p></th>
+
+				<th>
+					<form action="/utente" method="get">
+						<button type="submit" class="btn btn-success">Utente</button>
+					</form>
+				</th>
+				<th><form action="/ristoratore" method="get">
+						<button type="submit" class="btn btn-success">Ristoratore</button>
+					</form></th>
+
+			</tr>
+
+		</table>
 	</form>
+<hr>
 
-	<form action="/ristoratore" method="get">
-		<button type="submit" class="btn btn-success">Ristoratore</button>
-	</form>
 
 	<!--  <form action="Admin.html" method="post">
 	<button type="submit">Admin</button>
@@ -54,19 +67,24 @@ shrink-to-fit=no">
 	-->
 
 	<h2>Non hai mai usato DeGrinSpun? Registrati subito!</h2>
-	<p>Registrati come:</p>
-	<form action="RegistraUt.html" method="post">
-		<div>
-			<button type="submit" class="btn btn-success">Utente</button>
-		</div>
-	</form>
-	<form action="RegistraRist.html" method="post">
-		<div>
-			<button type="submit" class="btn btn-success">Ristoratore</button>
-		</div>
-	</form>
+	<table align="center">
+		<tr>
+			<th><p>Registrati come:</p></th>
 
+			<th>
+				<form action="RegistraUt.html" method="post">
+					
+						<button type="submit" class="btn btn-success">Utente</button>
+				</form>
+			</th>
+			<th><form action="RegistraRist.html" method="post">
+					<div>
+						<button type="submit" class="btn btn-success">Ristoratore</button>
+					</div>
+				</form></th>
 
-
+		</tr>
+	</table>
+<hr>
 </body>
 </html>
