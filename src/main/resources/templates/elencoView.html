@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- my hello page -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,
+shrink-to-fit=no">
+<title>Thymeleaf</title>
+<link rel="stylesheet"
+type="text/css"
+href="css\fontAwesome.css"/>
+<link rel="stylesheet"
+type="text/css"
+href="css\bootstrap-theme.css"/>
+<link rel="stylesheet"
+type="text/css"
+href="css\bootstrap-theme.min.css"/>
+<link rel="stylesheet"
+type="text/css"
+href="css\bootstrap.css"/>
+<link rel="stylesheet"
+type="text/css"
+href="css\bootstrap.min.css"/>
+<link rel="stylesheet"
+type="text/css"
+href="css\templatemo-style.css"/>
+
+<link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body style="text-align:center" class="container-fluid ">
+
+	<h1>Restaurants in table</h1>
+
+
+				
+					
+	<table class="table table-striped">
+		<tr>
+			<th>RISTORANTE_ID</th>
+			<th>NOME</th>
+			<th>POSIZIONE</th>
+			<th>POSTI DISPONIBILI</th>
+			<th>TIPO CUCINA</th>
+			<th>EMAIL</th>
+			<th>OPZIONI</th>
+		</tr>
+			
+			
+		
+		
+		<tr th:each="cur: ${restaurants}">
+				
+				<td th:text="${cur.ristoranteId}" id="id" >1</td>
+			<td th:text="${cur.nome}" id="nome" >Trattoria</td>
+			<td th:text="${cur.posizione}" id=posizione ></td>
+			<td th:text="${cur.postiDisponibili}" id="postiDisponibili"></td>
+			<td th:text="${cur.tipoCucina}" id="tipoCucina" ></td>
+			<td th:text="${cur.email}" id="email" ></td>
+			<td>
+	
+		</tr>
+			
+			
+		
+	</table>
+
+							
+</body>
