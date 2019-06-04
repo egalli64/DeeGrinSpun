@@ -2,7 +2,10 @@ package dd;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 	
 	
@@ -11,6 +14,8 @@ import javax.persistence.Table;
 @Table(name = "GREEN_RISTORANTI")
 public class Green_Ristorante {
 @Id
+@GeneratedValue(strategy=GenerationType.SEQUENCE , generator="EmpGen")         // CREO SEQUENZA
+@SequenceGenerator(sequenceName="green_ristoranti_seq", allocationSize=1, name="EmpGen")
 @Column(name = "RISTORANTE_ID")
 private long ristoranteId;
 @Column(name = "NOME")
