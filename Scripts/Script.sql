@@ -62,3 +62,38 @@ VALUES (3, 'Antonio', 'Poidomani','poid@gmail.com','3','c140p','4');
 
 insert into Green_Utenti(utente_id, nome, cognome, email,user_id,password_user,affidabilita)
 VALUES (4, 'Tommaso', 'Pavan','vtommy@gmail.com','4','c140t','3');
+
+
+
+--TABELLA REVIEWS
+DROP table reviews;
+create table reviews (
+reviews_id integer
+constraint reviews_pk primary key,
+servizio integer,
+atmosfera integer,
+qualitaprezzo integer,
+pulizia integer,
+commento varchar2(100));
+
+
+alter table reviews add constraint servizio_ck check(servizio in (1, 2, 3, 4, 5));
+alter table reviews add constraint atmosfera_ck check(atmosfera in (1, 2, 3, 4, 5));
+alter table reviews add constraint qualitaprezzo_ck check(qualitaprezzo in (1, 2, 3, 4, 5));
+alter table reviews add constraint pulizia_ck check(pulizia in (1, 2, 3, 4, 5));
+
+alter table reviews add constraint ristorante_id_fk ristorante_id references green_ristoranti(ristorante_id);
+
+
+
+insert into reviews (reviews_id,ristorante_id, servizio, atmosfera, qualitaprezzo,pulizia,commento)
+VALUES (1, 2, 4, 3, 5, 4, 'Posto ideale se si vuole spendere poco e mangiare bene, consigliato');
+
+insert into reviews (reviews_id,ristorante_id, servizio, atmosfera, qualitaprezzo,pulizia,commento)
+VALUES (2,5, 4, 3, 4, 4,'Ottimo servizio, proprietari gentili');
+
+insert into reviews (reviews_id,ristorante_id, servizio, atmosfera, qualitaprezzo,pulizia,commento)
+VALUES (3,3, 4, 3, 4, 3, 'Ristorante nella media, da provare');
+
+insert into reviews (reviews_id,ristorante_id, servizio, atmosfera, qualitaprezzo,pulizia,commento)
+VALUES (4,5, 5, 4, 5, 4, 'Ristorante eccellente, consigliato');

@@ -47,21 +47,24 @@ shrink-to-fit=no">
 			<td th:text="${cur.affidabilita}"></td>
 			<td></td>
 	</table>
-
-	<form action="/insertUtente" method="get">
-
-
-		<button type="submit" class="btn btn-success">Insert</button>
-
-	</form>
-
-	<form action="/updateUtente" method="get">
+	<table class="table">
+		<tr>
+			<form action="/insertUtente" method="get">
 
 
-		<button type="submit" class="btn btn-success">Update</button>
+				<button type="submit" class="btn btn-success">Insert</button>
 
-	</form>
+			</form>
+		</tr>
+		<tr>
+			<form action="/updateUtente" method="get">
 
+
+				<button type="submit" class="btn btn-success">Update</button>
+
+			</form>
+		<tr>
+	</table>
 	<form action="/deleteUtente" method="get">
 
 		<div>
