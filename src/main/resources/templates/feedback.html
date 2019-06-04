@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,
+shrink-to-fit=no">
+<title>Thymeleaf</title>
+<link rel="stylesheet"
+type="text/css"
+href="css\fontAwesome.css"/>
+<link rel="stylesheet"
+type="text/css"
+href="css\bootstrap-theme.css"/>
+<link rel="stylesheet"
+type="text/css"
+href="css\bootstrap-theme.min.css"/>
+<link rel="stylesheet"
+type="text/css"
+href="css\bootstrap.css"/>
+<link rel="stylesheet"
+type="text/css"
+href="css\bootstrap.min.css"/>
+<link rel="stylesheet"
+type="text/css"
+href="css\templatemo-style.css"/>
+
+<link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body style="text-align:center" class="container-fluid ">
+
+	<h1>INSERISCI IL TUO FEEDBACK</h1>
+
+
+				
+					
+	<table class="table table-striped">
+		<tr>
+			
+			<th>SERVIZIO</th>
+			<th>ATMOSFERA</th>
+			<th>QUALITA/PREZZO</th>
+			<th>PULIZIA</th>
+			<th>COMMENTO</th>
+			<th>OPZIONI</th>
+		</tr>
+			
+			
+		
+		
+		<tr th:each="cur: ${restaurants}">
+				
+			<td name="servizio" id="servizio" >
+				<input type="radio" id="favJ1" name="fav1" value="1" />
+					<label for="favJ1">1</label><br>
+				<input type="radio" id="favJ2" name="fav2" value="2"  />
+					<label for="favJ2">2</label><br>
+				<input type="radio" id="favJ3" name="fav3" value="3" checked />
+					<label for="favJ3">3</label><br>
+				<input type="radio" id="favJ4" name="fav4" value="4"  />
+					<label for="favJ4">4</label><br>
+				<input type="radio" id="favJ5" name="fav5" value="5" />
+					<label for="favJ5">5</label><br>
+			</td>
+			
+			<td name="atmosfera" id="atmosfera" >
+			<input type="radio" id="favJ6" name="fav6" value="1" />
+					<label for="favJ6">1</label><br>
+				<input type="radio" id="favJ7" name="fav7" value="2"  />
+					<label for="favJ7">2</label><br>
+				<input type="radio" id="favJ8" name="fav8" value="3" checked />
+					<label for="favJ8">3</label><br>
+				<input type="radio" id="favJ9" name="fav9" value="4"  />
+					<label for="favJ9">4</label><br>
+				<input type="radio" id="favJ10" name="fav10" value="5"  />
+					<label for="favJ10">5</label><br>
+			</td>
+			
+			<td name="qualitaprezzo" id="qualitaprezzo">
+			<input type="radio" id="favJ11" name="fav11" value="1"  />
+					<label for="favJ11">1</label><br>
+				<input type="radio" id="favJ12" name="fav12" value="2"  />
+					<label for="favJ12">2</label><br>
+				<input type="radio" id="favJ13" name="fav13" value="3" checked />
+					<label for="favJ13">3</label><br>
+				<input type="radio" id="favJ14" name="fav14" value="4"  />
+					<label for="favJ14">4</label><br>
+				<input type="radio" id="favJ15" name="fav15" value="5"  />
+					<label for="favJ15">5</label><br>
+			</td>
+			
+			<td name="pulizia" id="pulizia" >
+			<input type="radio" id="favJ16" name="fav16" value="1" />
+					<label for="favJ16">1</label><br>
+				<input type="radio" id="favJ17" name="fav17" value="2" />
+					<label for="favJ17">2</label><br>
+				<input type="radio" id="favJ18" name="fav18" value="3" checked />
+					<label for="favJ18">3</label><br>
+				<input type="radio" id="favJ19" name="fav19" value="4"  />
+					<label for="favJ19">4</label><br>
+				<input type="radio" id="favJ20" name="fav20" value="5" />
+					<label for="favJ20">5</label><br>
+			</td>
+			
+			<td name="commento" id="commento" ><textarea id="msg" name="message" cols="18" rows="4" ></textarea></td>
+			<td name="submit" ><button type="submit" class="btn btn-success">Conferma</button></td>
+			<td>
+	
+		</tr>
+			
+			
+		
+	</table>
+
+							
+</body>
+</html>
