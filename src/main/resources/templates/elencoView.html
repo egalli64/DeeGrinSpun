@@ -46,18 +46,16 @@ shrink-to-fit=no">
 
 			<td th:text="${cur.tipoCucina}" id="tipoCucina"></td>
 			<td th:text="${cur.email}" id="email"></td>
-			<td th:text="${cur.opzioni}">
+			<td>opzioni
 
-				<form action="/feedback" method="get">
-					<button type="submit" class="btn btn-success">Recensisci</button>
-				</form>
+				
 			</td>
 
 			<td th:text="${cur.tipoCucina}" id="tipoCucina" ></td>
 			<td th:text="${cur.email}" id="email" ></td>
 			<td >
 		
-			<form action="elencoView" method="get">
+			<form action="/elencoView" method="get">
 						<button type="submit" class="btn btn-success">Recensisci</button>
 						</form></td>
 		
