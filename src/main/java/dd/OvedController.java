@@ -25,7 +25,8 @@ public class OvedController {
 	
 	//-------------- ACCESSO UTENTI---------------
 	@GetMapping("/elencoView")
-	public String user() {
+	public String user(Model model) {
+		model.addAttribute("restaurants", repo.findAll()); 
 			return "/elencoView";
 	}
 	
