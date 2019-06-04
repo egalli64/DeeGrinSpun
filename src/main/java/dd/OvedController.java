@@ -33,7 +33,14 @@ public class OvedController {
 	
 	@GetMapping("/feedback")
 	public String feedback() {
- 
+		
+	
+		reviews_id integer	constraint reviews_pk primary key,
+		servizio integer,
+		atmosfera integer,
+		qualitaprezzo integer,
+		pulizia integer,
+		commento varchar2(100));
 			return "/feedback";
 	}
 	
