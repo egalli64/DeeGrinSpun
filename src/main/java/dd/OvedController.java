@@ -119,14 +119,14 @@ public class OvedController {
 	
 	
 	@GetMapping("/confirm")
-	public String inserisciRistoranti(@RequestParam(name = "id") long ristoranteId, 
+	public String inserisciRistoranti( 
 			@RequestParam(name = "nome") String nome, @RequestParam(name = "posizione") String posizione,
 			@RequestParam(name = "postiDisponibili") long postiDisponibili, 
 			@RequestParam(name = "tipoCucina") String tipoCucina,
 			@RequestParam(name="email") String email,
 			
 			Model model) {
-		Green_Ristorante risto= new Green_Ristorante(ristoranteId, nome, posizione, postiDisponibili,  tipoCucina,
+		Green_Ristorante risto= new Green_Ristorante( nome, posizione, postiDisponibili,  tipoCucina,
 			email);
 		repo.save(risto);
 		model.addAttribute("restaurants", repo.findAll()); /* dopo aver inserito l'elemento dall'oggetto,

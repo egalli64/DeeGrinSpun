@@ -60,6 +60,17 @@ public Green_Ristorante(long ristoranteId, String nome, String posizione, long p
 }
 
 
+public Green_Ristorante(String nome, String posizione, long postiDisponibili, String tipoCucina, String email
+		) {
+	
+	this.nome = nome;
+	this.posizione = posizione;
+	this.postiDisponibili = postiDisponibili;
+	this.tipoCucina = tipoCucina;
+	this.email = email;
+	
+}
+
 public Green_Ristorante(Green_Ristorante green) {
 	super();
 	setristoranteId(green.ristoranteId);
