@@ -19,8 +19,12 @@ private String nome;
 private String cognome;
 @Column(name = "EMAIL")
 private String email;
-@Column(name = "USER ID")
+
+@Column(name = "USER_ID")
 private String userId;
+@Column(name = "PASSWORD_USER")
+private String password_user;
+
 @Column(name = "AFFIDABILITA")
 private String affidabilita;
 public long getUtenteId() {
@@ -49,6 +53,15 @@ public String getUserId() {
 }
 public void setUserId(String userId) {
 	this.userId = userId;
+	
+
+	
+}
+public String getPassword_user() {
+	return password_user;
+}
+public void setPassword_user(String password) {
+	this.password_user = password;
 }
 public String getAffidabilita() {
 	return affidabilita;
@@ -62,9 +75,27 @@ public void setUtenteId(long utenteId) {
 @Override
 public String toString() {
 	return "Green_Utente [utenteId=" + utenteId + ", nome=" + nome + ", cognome=" + cognome + ", email=" + email
-			+ ", userId=" + userId + ", affidabilita=" + affidabilita + "]";
+			+ ", userId=" + userId + ", password_user=" + password_user + ", affidabilita=" + affidabilita + "]";
 }
-public Green_Utente(long utenteId, String nome, String cognome, String email, String userId, String affidabilita) {
+public Green_Utente(long utenteId, String nome, String cognome, String email, String userId, String password_user,
+		String affidabilita) {
+	super();
+	this.utenteId = utenteId;
+	this.nome = nome;
+	this.cognome = cognome;
+	this.email = email;
+	this.userId = userId;
+	this.password_user = password_user;
+	this.affidabilita = affidabilita;
+}
+
+public Green_Utente() {
+	
+}
+
+
+public Green_Utente(long utenteId, String nome, String cognome, String email, String userId,
+		String affidabilita) {
 	super();
 	this.utenteId = utenteId;
 	this.nome = nome;
@@ -73,12 +104,6 @@ public Green_Utente(long utenteId, String nome, String cognome, String email, St
 	this.userId = userId;
 	this.affidabilita = affidabilita;
 }
-public Green_Utente() {
-	super();
-}
-
-
-
 
 
 
