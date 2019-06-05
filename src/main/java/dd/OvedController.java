@@ -233,7 +233,28 @@ public class OvedController {
 	}
 	
 	
+	@GetMapping("/updateUtente")
+	public String updateUtente( @RequestParam Long id,Model model) {
+		
+		
+		Optional<Green_Utente> opt= repoUser.findById(id); 
+		
+		if(opt.isPresent()) {
+			
+			model.addAttribute("users", opt.get()); 
+			
+		}
+		return "/modificaUtente";
+	}
 	
+	
+	@GetMapping("/deleteUtente")
+	public String eliminaUtente(@RequestParam(name = "id") long id, Model model) {
+		repoUser.deleteById(id);
+		model.addAttribute("users", repoUser.findAll());
+		
+		return "/elencoUtenti";
+	}
 	
 	
 }
