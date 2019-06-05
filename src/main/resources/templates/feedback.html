@@ -25,11 +25,12 @@
 
 	<h1>INSERISCI IL TUO FEEDBACK</h1>
 
-<h1>Recensione per: </h1>
-<h2 th:text="${ristoPerRecensione.nome}" id="id"></h2>
+	<h1>Recensione per:</h1>
+	<h2 th:text="${ristoPerRecensione.nome}" id="id"></h2>
 
 
 	<form action="/confirmFeedback" method="get">
+		<p th:text="${id}" id="id"></p>
 		<table class="table table-striped">
 			<tr>
 
@@ -40,25 +41,14 @@
 				<th>COMMENTO</th>
 				<th>OPZIONI</th>
 			</tr>
-
-
-
-
-
-
 			<tr>
-			<td th:text="${id}" id="id"></td>
-				
-
-				<td><input type="radio" name="servizio" id="servizio"
-					value="1" /> <label for="servizio">1</label><br> <input
-					type="radio" name="servizio" id="servizio" value="2" /> <label
-					for="servizio">2</label><br> <input type="radio"
-					name="servizio" id="servizio" value="3" checked /> <label
-					for="servizio">3</label><br> <input type="radio"
-					name="servizio" id="servizio" value="4" /> <label
-					for="servizio">4</label><br> <input type="radio"
-					name="servizio" id="servizio" value="5" /> <label
+				<td><input type="radio" name="servizio" id="servizio" value="1" />
+					<label for="servizio">1</label><br> <input type="radio"
+					name="servizio" id="servizio" value="2" /> <label for="servizio">2</label><br>
+					<input type="radio" name="servizio" id="servizio" value="3" checked />
+					<label for="servizio">3</label><br> <input type="radio"
+					name="servizio" id="servizio" value="4" /> <label for="servizio">4</label><br>
+					<input type="radio" name="servizio" id="servizio" value="5" /> <label
 					for="servizio">5</label><br></td>
 
 				<td><input type="radio" name="atmosfera" id="atmosfera"
@@ -96,13 +86,7 @@
 				<td><textarea name="commento" id="commento" cols="18" rows="4"></textarea></td>
 
 				<td>
-
-					<button type="submit" class="btn btn-success">Conferma</button>
-
-
-
-				</td>
-				<td>
+					<button type="submit" class="btn btn-success">Conferma</button></td>
 			</tr>
 
 
