@@ -102,6 +102,11 @@ public class OvedController {
 		
 	return "/AccessoAdmin";
 	}
+	@GetMapping("/TornaAdmin")
+	public String tornaAdmin() {
+		
+		return "/Admin";
+	}
 		
 	
 	@GetMapping("/accesso")
