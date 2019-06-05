@@ -100,7 +100,7 @@ public class OvedController {
 	@GetMapping("/AccessoAdmin")
 	public String adminaccesso() {
 		
-	return "/Admin";
+	return "/AccessoAdmin";
 	}
 		
 	
