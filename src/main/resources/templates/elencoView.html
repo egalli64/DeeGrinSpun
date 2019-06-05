@@ -25,7 +25,7 @@ shrink-to-fit=no">
 
 	<table class="table table-striped">
 		<tr>
-			<th>RISTORANTE_ID</th>
+			
 			<th>NOME</th>
 			<th>POSIZIONE</th>
 			<th>POSTI DISPONIBILI</th>
@@ -39,7 +39,7 @@ shrink-to-fit=no">
 
 		<tr th:each="cur: ${restaurants}">
 
-			<td th:text="${cur.ristoranteId}" id="id"></td>
+			
 			<td th:text="${cur.nome}" id="nome"></td>
 			<td th:text="${cur.posizione}" id=posizione></td>
 			<td th:text="${cur.postiDisponibili}" id="postiDisponibili"></td>
@@ -53,14 +53,16 @@ shrink-to-fit=no">
 
 
 				<form action="/feedback" method="get">
+					<input type="hidden" name="id" id="id" th:text="${cur.ristoranteId}"></input>
 					<button type="submit" class="btn btn-success">Recensisci</button>
 				</form>
 
 				<form action="/confirmFeedback" method="get">
+			<input type="hidden" name="id" id="id" th:text="${cur.ristoranteId}"></input>
 					<button type="submit" class="btn btn-success">Vedi
 						Recensioni</button>
-				</form>
-
+				
+</form>
 
 			</td>
 

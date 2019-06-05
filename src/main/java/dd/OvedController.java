@@ -41,12 +41,7 @@ public class OvedController {
 	//-----------------REVIEWS-----------------------------
 	
 	@GetMapping("/feedback")
-	public String feedback(/*@RequestParam(name = "id") long reviewsId, 
-			@RequestParam(name = "servizio") long servizio, @RequestParam(name = "atmosfera") long atmosfera,
-			@RequestParam(name = "qualitaprezzo") long qualitaprezzo, 
-			@RequestParam(name = "pulizia") long pulizia,
-			@RequestParam(name="commento") String commento,
-			Model model */) {
+	public String feedback() {
 	
 			return "/feedback";
 	}
