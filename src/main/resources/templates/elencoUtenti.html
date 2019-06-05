@@ -1,35 +1,29 @@
 <!DOCTYPE html>
-<!-- my hello page -->
+
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+
+<title>Elenco Utenti</title>
 <meta charset="utf-8">
+
 <meta name="viewport"
 	content="width=device-width, initial-scale=1,
 shrink-to-fit=no">
-<title>Thymeleaf</title>
-<link rel="stylesheet" type="text/css" href="css\fontAwesome.css" />
-<link rel="stylesheet" type="text/css" href="css\bootstrap-theme.css" />
-<link rel="stylesheet" type="text/css"
-	href="css\bootstrap-theme.min.css" />
-<link rel="stylesheet" type="text/css" href="css\bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="css\bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="css\templatemo-style.css" />
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body style="text-align: center" class="container-fluid ">
-<!-- Home BUTTON -->
-<h1><a href="index.html" >DeGrinSpun</a></h1>
 
-
-	<p>Utenti in table</p>
+	<h1>UTENTI</h1>
 
 
 
-	<button type="submit" class="btn btn-success">Insert</button>
+
 	<table class="table table-striped">
 		<tr>
 			<th>UTENTE_ID</th>
@@ -37,46 +31,43 @@ shrink-to-fit=no">
 			<th>COGNOME</th>
 			<th>EMAIL</th>
 			<th>USER_ID</th>
-			<th>AFFIDABILITA'</th>
-
+			<th>PASSWORD</th>
+			<th>AFFIDABILITA</th>
+			<th></th>
 		</tr>
-		<tr th:each="cur: ${utents}">
-			<td th:text="${cur.utenteId}">1</td>
-			<td th:text="${cur.nome}">Trattoria</td>
-			<td th:text="${cur.cognome}"></td>
-			<td th:text="${cur.email}"></td>
-			<td th:text="${cur.userId}"></td>
-			<td th:text="${cur.password}"></td>
-			<td th:text="${cur.affidabilita}"></td>
-			<td></td>
-	</table>
-	<table class="table">
-		<tr>
-			<form action="/insertUtente" method="get">
+	
 
 
-				<button type="submit" class="btn btn-success">Insert</button>
 
-			</form>
+		<tr th:each="cur: ${users}">
+
+			<td th:text="${cur.utenteId}" id="id"></td>
+			<td th:text="${cur.nome}" id="nome"></td>
+			<td th:text="${cur.cognome}" id="cognome"></td>
+			<td th:text="${cur.email}" id="email"></td>
+			<td th:text="${cur.userId}" id="userId"></td>
+			<td th:text="${cur.password_user}" id="password"></td>
+			<td th:text="${cur.affidabilita}" id="affidabilita"></td>
+			<td><a th:href="@{/update(id=${cur.utenteId})}">
+
+					<button type="submit" class="btn btn-success">Update</button>
+
+			</a> <a th:href="@{/delete(id=${cur.utenteId})}">
+					<button type="submit" class="btn btn-success">Delete</button>
+			</a></td>
 		</tr>
-		<tr>
-			<form action="/updateUtente" method="get">
+		
+		
+
+</table>
+
+		<form action="/insertUtente" method="get">
+
+			<button type="submit" class="btn btn-success">Insert</button>
+
+		</form>
 
 
-				<button type="submit" class="btn btn-success">Update</button>
-
-			</form>
-		<tr>
-	</table>
-	<form action="/deleteUtente" method="get">
-
-		<div>
-			<label for="id">Utente id:</label> <input type="text" name="id">
-		</div>
-
-		<button type="submit" class="btn btn-success">Delete</button>
-
-	</form>
 
 
 </body>

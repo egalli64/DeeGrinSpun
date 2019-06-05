@@ -1,57 +1,71 @@
 <!DOCTYPE html>
-<!-- my hello page -->
+
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+
+<title>Elenco Utenti</title>
 <meta charset="utf-8">
-<title>Thymeleaf</title>
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,
+shrink-to-fit=no">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
-	<!-- Home BUTTON -->
-	<h1>
-		<a href="index.html">DeGrinSpun</a>
-	</h1>
+<body style="text-align: center" class="container-fluid ">
+
+	<h1>UTENTI</h1>
 
 
-	<table>
+
+
+	<table class="table table-striped">
 		<tr>
 			<th>UTENTE_ID</th>
 			<th>NOME</th>
 			<th>COGNOME</th>
 			<th>EMAIL</th>
 			<th>USER_ID</th>
-			<td>PASSWORD</td>
-			<th>AFFIDABILITA'</th>
-
+			<th>PASSWORD</th>
+			<th>AFFIDABILITA</th>
+			<th></th>
 		</tr>
-		<form action="/confirmUtente" method="get">
-		<tr>
-			
-				<td><label for="utenteId">Utente id:</label> <input type="text"
-					name="utenteId"></td>
-				<td><label for="nome">Nome:</label> <input type="text"
-					name="nome"></td>
-				<td><label for="cognome">Cognome:</label> <input type="text"
-					name="cognome"></td>
-				<td><label for="email">Email</label> <input type="text"
-					name="email"></td>
-				<td><label for="userId">User id</label> <input type="text"
-					name="userId"></td>
+	
 
-				<td><label for="password">Password user</label> <input
-					type="text" name="password"></td>
 
-				<td><label for="affidabilita">Affidabilità</label> <input
-					type="text" name="affidabilita"></td>
-				<td><button type="submit">Confirm</button></td>
-			
+
+		<tr th:each="cur: ${users}">
+
+			<td th:text="${cur.utenteId}" id="id"></td>
+			<td th:text="${cur.nome}" id="nome"></td>
+			<td th:text="${cur.cognome}" id="cognome"></td>
+			<td th:text="${cur.email}" id="email"></td>
+			<td th:text="${cur.userId}" id="userId"></td>
+			<td th:text="${cur.password_user}" id="password"></td>
+			<td th:text="${cur.affidabilita}" id="affidabilita"></td>
+			<td><a th:href="@{/update(id=${cur.utenteId})}">
+
+					<button type="submit" class="btn btn-success">Update</button>
+
+			</a> <a th:href="@{/delete(id=${cur.utenteId})}">
+					<button type="submit" class="btn btn-success">Delete</button>
+			</a></td>
 		</tr>
+		
+		
+
+</table>
+
+		<form action="/insertUtente" method="get">
+
+			<button type="submit" class="btn btn-success">Insert</button>
+
 		</form>
-	</table>
-
-
-
 
 
 

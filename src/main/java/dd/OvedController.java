@@ -22,7 +22,7 @@ public class OvedController {
 	
 	@Autowired Green_RistorantiRepo repo;
 	@Autowired Green_ReviewsRepo repoRev;
-	@Autowired Green_UtentiRepo repoModifica;
+	@Autowired Green_UtentiRepo repoUser;
 	
 	//-------------- ACCESSO UTENTI---------------
 	@GetMapping("/elencoView")
@@ -181,70 +181,36 @@ public class OvedController {
 
 	
 	
-	//-------------------------- UTENTI DA CORREGGERE ---------------------------------
+	//-------------------------- UTENTI DA CORREGGERE SEQUENZA ---------------------------------
 
-@Autowired Green_UtentiRepo repo2;
-	
-	@GetMapping("/utente")
+	@GetMapping("/elencoUtenti")
 	public String elencoUtenti(Model model) {
-		model.addAttribute("users", repo2.findAll()); 
-		return "/elencoUtente";
+		model.addAttribute("users", repoUser.findAll());
+		return "/elencoUtenti";
 	}
 	
 	
 	@GetMapping("/insertUtente")
-	public String insertUtente() { 
+	public String insertUsers() { 
 		return "/inserisciUtente";
 	}
 	
-	
 	@GetMapping("/confirmUtente")
-	public String inserisciUtenti(@RequestParam(name = "id") long utenteId, 
-			@RequestParam(name = "nome") String nome, @RequestParam(name = "cognome") String cognome,
+	public String inserisciUtenti(
+			@RequestParam(name = "id") long utenteId, 
+			@RequestParam(name = "nome") String nome, 
+			@RequestParam(name = "cognome") String cognome,
 			@RequestParam(name = "email") String email, 
-			@RequestParam(name = "password") String password,
+			@RequestParam(name = "userId") String userId,
 			@RequestParam(name="affidabilita") String affidabilita,
 			
 			Model model) {
-		Green_Utente uten= new Green_Utente(utenteId, nome, cognome, email, password,
+		Green_Utente user= new Green_Utente(utenteId, nome, cognome, email,  userId,
 			affidabilita);
-		repo2.save(uten);
-		model.addAttribute("users", repo2.findAll()); /* dopo aver inserito l'elemento dall'oggetto,
-		devo ripassare i valori nell'oggetto repo con findAll */
-		return "/elencoUtente";
+		repoUser.save(user);
+		model.addAttribute("users", repoUser.findAll());
+		return "/elencoUtenti";
 	}
-	
-
-
-
-
-
-	
-	@GetMapping("/updateUtente")
-	public String updateUtente() {
-		
-		return "/modificaUtente";
-	}
-	
-	
-	@GetMapping("/modificaUtente")
-	public String modificaUtenti(@RequestParam(name = "id") long utenteId, 
-			@RequestParam(name = "nome") String nome, @RequestParam(name = "cognome") String cognome,
-			@RequestParam(name = "email") String email, 
-			@RequestParam(name = "password") String password,
-			@RequestParam(name="affidabilita") String affidabilita,
-			
-			Model model)  {
-		Green_Utente uten= new Green_Utente(utenteId, nome, cognome, email, password,
-			affidabilita);
-		repo2.save(uten);
-		model.addAttribute("users", repo2.findAll()); /* dopo aver inserito l'elemento dall'oggetto,
-		devo ripassare i valori nell'oggetto repo con findAll */
-		return "/elencoUtente";
-	}
-	
-	
-	
 	
 	
 	
