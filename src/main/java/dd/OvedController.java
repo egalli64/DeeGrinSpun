@@ -41,8 +41,19 @@ public class OvedController {
 	//-----------------REVIEWS-----------------------------
 	
 	@GetMapping("/feedback")
-	public String feedback() {
+	public String feedback( @RequestParam(name="id") Long id, Model model) {
 	
+		
+		Optional<Green_Ristorante> opt= repo.findById(id); /* ritorna un optional di ristorante 
+		(l'OPTIONAL serve per poter lavorare anche con i null. Optional è una collezione,
+		e lo dobbiamo importare. */
+		
+		if(opt.isPresent()) { // se opt non è null
+			// model delete
+			model.addAttribute("revAttuale", opt.get()); // opt.get passa il valore nella chiave "restaurant"
+		
+		}
+
 			return "/feedback";
 	}
 	
@@ -78,9 +89,9 @@ public class OvedController {
 	
 	// ---------- ACCESSO ADMIN ---------------
 	@GetMapping("/AccessoAdmin")
-	public String admin() {
+	public String adminaccesso() {
 		
-	return "/AccessoAdmin";
+	return "/Admin";
 	}
 		
 	
