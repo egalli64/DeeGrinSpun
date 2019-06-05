@@ -66,7 +66,6 @@ public class OvedController {
 	
 	@GetMapping("/confirmFeedback")
 	 public String confirmFeedback(
-			 @RequestParam(name = "id") long reviewsId, 
 				@RequestParam(name = "servizio") long servizio, 
 				@RequestParam(name = "atmosfera") long atmosfera,
 				@RequestParam(name = "qualitaprezzo") long qualitaprezzo, 
@@ -74,24 +73,12 @@ public class OvedController {
 				@RequestParam(name="commento") String commento,
 				Model model) {
 		
+		Green_Review review= new Green_Review( servizio, atmosfera, qualitaprezzo, pulizia,	commento);
 		
+		repoRev.save(review);
 		
-		Optional<Green_Ristorante> opt= repo.findById(id); /* ritorna un optional di ristorante 
-		(l'OPTIONAL serve per poter lavorare anche con i null. Optional è una collezione,
-		e lo dobbiamo importare. */
+		model.addAttribute("reviews", repoRev.findAll());
 		
-		if(opt.isPresent()) { // se opt non è null
-			 
-			// model delete
-			model.addAttribute("ristoPerRecensione", opt.get()); // opt.get passa il valore nella chiave "restaurant"
-		
-		Green_Review review= new Green_Review(reviewsId, servizio, atmosfera, qualitaprezzo, pulizia,
-				commento, Green_Ristorante green_ristorante);
-		
-		
-			repoRev.save(review);
-		model.addAttribute("reviews", repoRev.findAll()); 
-		model.addAttribute("restaurants", repo.findAll());
 			return "/elencoView";
 	}
 	
