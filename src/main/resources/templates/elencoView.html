@@ -48,25 +48,30 @@ shrink-to-fit=no">
 			<td th:text="${cur.email}" id="email"></td>
 			<td>
 
-				
-			
-		
-			<form action="/feedback" method="get">
-						<button type="submit" class="btn btn-success">Recensisci</button>
-						</form>
-						
-			<form action="/confirmFeedback" method="get">
-						<button type="submit" class="btn btn-success">Vedi Recensioni</button>
-						</form>		
-						
-						
-						</td>
-		
-	
+
+
+
+				<form action="/feedback" method="get">
+					<button type="submit" class="btn btn-success">Recensisci</button>
+				</form>
+
+				<form action="/confirmFeedback" method="get">
+					<button type="submit" class="btn btn-success">Vedi
+						Recensioni</button>
+				</form>
+
+
+			</td>
+
+
 
 		</tr>
 
 	</table>
+	<!-- Home BUTTON -->
+	<form action="Home">
+		<button type="submit" class="btn btn-success">Home</button>
+	</form>
 
 
 </body>

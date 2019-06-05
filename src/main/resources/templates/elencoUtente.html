@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Thymeleaf</title>
+<title>gestione utenti</title>
 </head>
 
 <body>
@@ -12,8 +12,8 @@
 	<p>Utenti in table</p>
 
 
-				
-					<button type="submit">Insert</button>
+
+	<button type="submit">Inserisci</button>
 	<table>
 		<tr>
 			<th>UTENTE_ID</th>
@@ -22,59 +22,53 @@
 			<th>EMAIL</th>
 			<th>USER_ID</th>
 			<th>AFFIDABILITA'</th>
-			
+
 		</tr>
 		<tr th:each="cur: ${utents}">
-				<td th:text="${cur.utenteId}">1</td>
-			<td th:text="${cur.nome}">Trattoria</td>
+			<td th:text="${cur.utenteId}"></td>
+			<td th:text="${cur.nome}"></td>
 			<td th:text="${cur.cognome}"></td>
 			<td th:text="${cur.email}"></td>
 			<td th:text="${cur.userId}"></td>
 			<td th:text="${cur.password}"></td>
 			<td th:text="${cur.affidabilita}"></td>
-			<td>
-			
-		
-			
-
-				
-				
-
-
-			</td>
-			
-			
-			
-		
+			<td></td>
 	</table>
 
-		<form action="/insertUtente" method="get">
-	
-					
-					<button type="submit">Insert</button>
-				
-				</form>	
-	
-	<form action="/updateUtente" method="get">
-	
-					
-					<button type="submit">Update</button>
-				
-				</form>	
-		
-		
-					
-					<form action="/deleteUtente"
-					method="get">
-					
-					<div>
-<label for="id">Utente id:</label>
-<input type="text"  name="id">
-</div>
-					
-					<button type="submit">Delete</button>
-				
-				</form>
+	<form action="/insertUtente" method="get">
 
-							
+
+		<button type="submit">Insert</button>
+
+	</form>
+
+	<form action="/updateUtente" method="get">
+
+
+		<button type="submit">Update</button>
+
+	</form>
+
+
+
+	<form action="/deleteUtente" method="get">
+
+		<div>
+			<label for="id">Utente id:</label> <input type="text" name="id">
+		</div>
+
+		<button type="submit">Delete</button>
+
+	</form>
+
+	<!-- Home BUTTON -->
+	<form action="Home">
+		<button type="submit" class="btn btn-success">Home</button>
+	</form>
+	<!-- Admin BUTTON -->
+	<form action="Admin">
+		<button type="submit" class="btn btn-success">torna in admin</button>
+	</form>
+
+
 </body>
