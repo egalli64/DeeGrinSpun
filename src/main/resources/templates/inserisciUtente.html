@@ -8,7 +8,12 @@
 </head>
 
 <body>
-	
+	<!-- Home BUTTON -->
+	<h1>
+		<a href="index.html">DeGrinSpun</a>
+	</h1>
+
+
 	<table>
 		<tr>
 			<th>UTENTE_ID</th>
@@ -16,68 +21,39 @@
 			<th>COGNOME</th>
 			<th>EMAIL</th>
 			<th>USER_ID</th>
-				<td>PASSWORD</td>
+			<td>PASSWORD</td>
 			<th>AFFIDABILITA'</th>
+
+		</tr>
+		<form action="/confirmUtente" method="get">
+		<tr>
+			
+				<td><label for="utenteId">Utente id:</label> <input type="text"
+					name="utenteId"></td>
+				<td><label for="nome">Nome:</label> <input type="text"
+					name="nome"></td>
+				<td><label for="cognome">Cognome:</label> <input type="text"
+					name="cognome"></td>
+				<td><label for="email">Email</label> <input type="text"
+					name="email"></td>
+				<td><label for="userId">User id</label> <input type="text"
+					name="userId"></td>
+
+				<td><label for="password">Password user</label> <input
+					type="text" name="password"></td>
+
+				<td><label for="affidabilita">Affidabilità</label> <input
+					type="text" name="affidabilita"></td>
+				<td><button type="submit">Confirm</button></td>
 			
 		</tr>
-		<tr>
-		<form action="/confirmUtente" method="get">
-				<td>
-				<label for="utenteId">Utente id:</label>
-<input type="text"  name="utenteId">
+		</form>
+	</table>
 
-				
-				</td>
-			<td >
 
-<label for="nome">Nome:</label>
-<input type="text"  name="nome">
 
-</td>
-			<td >
-			<label for="cognome">Cognome:</label>
-<input type="text"  name="cognome">
 
-			</td>
-			<td>
-			<label for="email">Email</label>
-<input type="text"  name="email">
 
-			</td>
-			<td>
-			<label for="userId">User id</label>
-<input type="text"  name="userId">
-
-			</td>
-			
-			<td>
-			<label for="password">Password user</label>
-<input type="text"  name="password">
-
-			</td>
-			
-			<td>
-			<label for="affidabilita">Affidabilità</label>
-<input type="text"  name="affidabilita">
-
-			</td>
-			<td>
-			
-	
-				
-				
-					<button type="submit">Confirm</button>
-			
-
-			</td>
-				</form>
-				</tr>
-				</table>
-		
-			
-			
-			
-		
 
 
 </body>
