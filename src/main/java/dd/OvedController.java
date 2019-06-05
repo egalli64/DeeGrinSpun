@@ -65,21 +65,34 @@ public class OvedController {
 	
 	
 	@GetMapping("/confirmFeedback")
-	 public String confirmFeedback(
+	 public String confirmFeedback( @RequestParam(name="id") Long id,
 				@RequestParam(name = "servizio") long servizio, 
 				@RequestParam(name = "atmosfera") long atmosfera,
 				@RequestParam(name = "qualitaprezzo") long qualitaprezzo, 
 				@RequestParam(name = "pulizia") long pulizia,
 				@RequestParam(name="commento") String commento,
 				Model model) {
-		
+		// <p th:text="${id}" id="id" name="id"></p>
 		Green_Review review= new Green_Review( servizio, atmosfera, qualitaprezzo, pulizia,	commento);
 		
 		repoRev.save(review);
 		
 		model.addAttribute("reviews", repoRev.findAll());
 		
-			return "/elencoView";
+		
+		
+		Optional<Green_Ristorante> opt= repo.findById(id); // prendo il ristorante con l'id scelto
+		
+		if(opt.isPresent()) { // se opt non è null
+		
+		model.addAttribute("ristoPerRecensione", opt.get()); // opt.get passa il ristorante alla chiave ristoPerRecensione
+		}
+		
+		
+		
+		
+		
+			return "/feedbackDone";
 	}
 	
 	
