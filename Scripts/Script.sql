@@ -12,28 +12,28 @@ tipo_cucina varchar2(222),
 email varchar2(222));
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
-VALUES (1, 'Trattoria da Vince', '39.14,16.90',100,'cucina calabrese','vinx@live.it');
+VALUES (green_ristoranti_seq.nextval, 'Trattoria da Vince', '39.14,16.90',100,'cucina calabrese','vinx@live.it');
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
-VALUES (2, 'Trattoria da Luca', '40.83,14.31',100,'cucina campana','luk@live.it');
+VALUES (green_ristoranti_seq.nextval, 'Trattoria da Luca', '40.83,14.31',100,'cucina campana','luk@live.it');
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
-VALUES (3, 'Trattoria da Tony', '36.81,14.96',100,'cucina sicula','tony@live.it');
+VALUES (green_ristoranti_seq.nextval, 'Trattoria da Tony', '36.81,14.96',100,'cucina sicula','tony@live.it');
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
-VALUES (4, 'Trattoria da Tommy', '44.70,10.56',100,'cucina emiliana','tom@live.it');
+VALUES (green_ristoranti_seq.nextval, 'Trattoria da Tommy', '44.70,10.56',100,'cucina emiliana','tom@live.it');
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
-VALUES (5, 'Pizzeria da Enzo', '45.70,10.56',100,'pizza','enz@live.it');
+VALUES (green_ristoranti_seq.nextval, 'Pizzeria da Enzo', '45.70,10.56',100,'pizza','enz@live.it');
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
-VALUES (6, 'Pizzeria da Luca', '38.70,15.56',100,'pizza','lulu@live.it');
+VALUES (green_ristoranti_seq.nextval, 'Pizzeria da Luca', '38.70,15.56',100,'pizza','lulu@live.it');
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
-VALUES (7, 'Pizzeria da Tony', '42.70,14.56',100,'pizza','tonytony@live.it');
+VALUES (green_ristoranti_seq.nextval, 'Pizzeria da Tony', '42.70,14.56',100,'pizza','tonytony@live.it');
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
-VALUES (8, 'Pizzeria da Tommy', '40.75,13.56',100,'pizza','tommasino@live.it');
+VALUES (green_ristoranti_seq.nextval, 'Pizzeria da Tommy', '40.75,13.56',100,'pizza','tommasino@live.it');
 
 
 
@@ -93,11 +93,8 @@ alter table reviews add constraint ristorante_id_fk ristorante_id references gre
 
 
 insert into reviews (reviews_id,ristorante_id, servizio, atmosfera, qualitaprezzo,pulizia,commento)
-<<<<<<< HEAD
-VALUES (1, 2, 4, 3, 5, 4, 'Posto ideale se si vuole ');
-=======
+
 VALUES (reviews_seq.nextval, 2, 4, 3, 5, 4, 'Posto ideale se si vuole spendere poco e mangiare bene, consigliato');
->>>>>>> branch 'master' of https://github.com/egalli64/DeeGrinSpun.git
 
 insert into reviews (reviews_id,ristorante_id, servizio, atmosfera, qualitaprezzo,pulizia,commento)
 VALUES (reviews_seq.nextval,5, 4, 3, 4, 4,'Ottimo servizio, proprietari gentili');
