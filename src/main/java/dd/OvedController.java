@@ -73,7 +73,7 @@ public class OvedController {
 				@RequestParam(name = "pulizia") long pulizia,
 				@RequestParam(name="commento") String commento,
 				Model model) {
-		// <p th:text="${id}" id="id" name="id"></p>
+		
 		Green_Review review= new Green_Review( servizio, atmosfera, qualitaprezzo, pulizia,	commento);
 		
 		repoRev.save(review);
@@ -260,6 +260,27 @@ public class OvedController {
 		model.addAttribute("users", repoUser.findAll());
 		
 		return "/elencoUtenti";
+	}
+	
+	@GetMapping("/modificaUtente")
+	public String modificaUtente(
+			 
+			@RequestParam(name = "nome") String nome,
+			@RequestParam(name = "cognome") String cognome,
+			@RequestParam(name = "email") String email, 
+			@RequestParam(name = "userId") String userId,
+			@RequestParam(name="affidabilita") String affidabilita,
+			Model model) {
+		
+		Green_Utente user= new Green_Utente(nome, cognome, email,  userId,
+				affidabilita);
+			repoUser.save(user);
+			model.addAttribute("users", repoUser.findAll());
+			
+			return "/elencoUtenti";
+		
+		
+	
 	}
 	
 }
