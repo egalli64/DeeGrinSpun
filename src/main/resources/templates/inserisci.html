@@ -17,47 +17,51 @@ shrink-to-fit=no">
 </head>
 
 <body style="text-align: center" class="container-fluid ">
-<!-- Home BUTTON -->
-<h1><a href="index.html" ><img src="img/LOGO1.1.png" class="img-fluid" width="30%"></a></h1>
+	<!-- Home BUTTON -->
+	<h1>
+		<a href="index.html"><img src="img/LOGO1.1.png" class="img-fluid"
+			width="30%"></a>
+	</h1>
 
-<h2>Inserisci nuovo Ristorante:</h2>
-<form action="/confirm" method="get">
-	<table class="table table-striped">
-		<tr>
-			
-			<th>NOME</th>
-			<th>POSIZIONE</th>
-			<th>POSTI DISPONIBILI</th>
-			<th>TIPO CUCINA</th>
-			<th>EMAIL</th>
-			<th></th>
-		</tr>
-		<tr>
+	<h2>Inserisci nuovo Ristorante:</h2>
+	<form action="/confirm" method="get">
+		<table class="table table-striped">
+			<tr>
 
-			
-			<td><label for="nome"></label> <input type="text"
-				name="nome"></td>
-			<td><label for="posizione"></label> <input type="text"
-				name="posizione"></td>
-			<td><label for="postiDisponibili"></label> <input
-				type="text" name="postiDisponibili"></td>
-			<td><label for="tipoCucina"></label> <input
-				type="text" name="tipoCucina"></td>
-			<td><label for="email"></label> <input type="text"
-				name="email"></td>
-			<td>
+				<th>NOME</th>
+				<th>POSIZIONE</th>
+				<th>POSTI DISPONIBILI</th>
+				<th>TIPO CUCINA</th>
+				<th>EMAIL</th>
+				<th></th>
+			</tr>
+			<tr>
 
-				
+
+				<td><label for="nome"></label> <input type="text" name="nome"></td>
+				<td><label for="posizione"></label> <input type="text"
+					name="posizione"></td>
+				<td><label for="postiDisponibili"></label> <input type="text"
+					name="postiDisponibili"></td>
+				<td><label for="tipoCucina"></label> <input type="text"
+					name="tipoCucina"></td>
+				<td><label for="email"></label> <input type="text" name="email"></td>
+				<td>
+
+
 					<button type="submit" class="btn btn-success">Confirm</button>
-				
-				
-			</td>
-
-		</tr>
-	</table>
-</form>
 
 
+				</td>
+
+			</tr>
+		</table>
+	</form>
+
+	<!-- Admin BUTTON -->
+	<form action="/AccessoAdmin">
+		<button type="submit" class="btn btn-success">torna in admin</button>
+	</form>
 
 
 

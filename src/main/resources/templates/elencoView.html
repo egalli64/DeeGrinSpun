@@ -17,8 +17,11 @@ shrink-to-fit=no">
 </head>
 
 <body style="text-align: center" class="container-fluid ">
-<!-- Home BUTTON -->
-<h1><a href="index.html" ><img src="img/LOGO1.1.png" class="img-fluid" width="30%"></a></h1>
+	<!-- Home BUTTON -->
+	<h1>
+		<a href="index.html"><img src="img/LOGO1.1.png" class="img-fluid"
+			width="30%"></a>
+	</h1>
 
 
 	<h1>Ecco i nostri ristoranti:</h1>
@@ -28,7 +31,7 @@ shrink-to-fit=no">
 
 	<table class="table table-striped">
 		<tr>
-			
+
 			<th>NOME</th>
 			<th>POSIZIONE</th>
 			<th>POSTI DISPONIBILI</th>
@@ -42,7 +45,7 @@ shrink-to-fit=no">
 
 		<tr th:each="cur: ${restaurants}">
 
-			
+
 			<td th:text="${cur.nome}" id="nome"></td>
 			<td th:text="${cur.posizione}" id=posizione></td>
 			<td th:text="${cur.postiDisponibili}" id="postiDisponibili"></td>
@@ -56,24 +59,24 @@ shrink-to-fit=no">
 
 
 				<form action="/feedback" method="get">
-				
-				<input type="hidden" name="id"
-					th:value="${cur.ristoranteId}" maxlength="30">
+
+					<input type="hidden" name="id" th:value="${cur.ristoranteId}"
+						maxlength="30">
 					<button type="submit" class="btn btn-success">Recensisci</button>
 				</form>
 
 				<form action="/FeedbackDone" method="get">
-			<input type="hidden" name="id"
-					th:value="${cur.ristoranteId}" maxlength="30">
+					<input type="hidden" name="id" th:value="${cur.ristoranteId}"
+						maxlength="30">
 					<button type="submit" class="btn btn-success">Vedi
 						Recensioni</button>
-				
-</form>
+
+				</form>
 
 			</td>
 
 
-	</tr>
+		</tr>
 
 	</table>
 

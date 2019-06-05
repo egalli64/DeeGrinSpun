@@ -16,16 +16,19 @@ shrink-to-fit=no">
 
 </head>
 
-<body style="text-align:center" class="container-fluid ">
-<!-- Home BUTTON -->
-<h1><a href="index.html" ><img src="img/LOGO1.1.png" class="img-fluid" width="30%"></a></h1>
+<body style="text-align: center" class="container-fluid ">
+	<!-- Home BUTTON -->
+	<h1>
+		<a href="index.html"><img src="img/LOGO1.1.png" class="img-fluid"
+			width="30%"></a>
+	</h1>
 
 
 	<h1>FEEDBACK</h1>
 
 
-				
-					
+
+
 	<table class="table table-striped">
 		<tr>
 			<th>REVIEWS_ID</th>
@@ -35,25 +38,26 @@ shrink-to-fit=no">
 			<th>PULIZIA</th>
 			<th>COMMENTO</th>
 		</tr>
-			
-			
-		
-		
-		<tr th:each="cur: ${reviews}">
-				
-			<td th:text="${cur.reviewsId}" id="id" ></td>
-			<td th:text="${cur.servizio}" id="servizio" ></td>
-			<td th:text="${cur.atmosfera}" id=atmosfera ></td>
-			<td th:text="${cur.qualitaprezzo}" id="qualitaprezzo"></td>
-			<td th:text="${cur.pulizia}" id="pulizia" ></td>
-			<td th:text="${cur.commento}" id="commento" ></td>
-			<td>
-	
-		</tr>
-			
-			
-		
-	</table>
 
-							
+
+
+
+		<tr th:each="cur: ${reviews}">
+
+			<td th:text="${cur.reviewsId}" id="id"></td>
+			<td th:text="${cur.servizio}" id="servizio"></td>
+			<td th:text="${cur.atmosfera}" id=atmosfera></td>
+			<td th:text="${cur.qualitaprezzo}" id="qualitaprezzo"></td>
+			<td th:text="${cur.pulizia}" id="pulizia"></td>
+			<td th:text="${cur.commento}" id="commento"></td>
+			<td>
+		</tr>
+
+
+
+	</table>
+	<form action="/elencoView" method="get">
+		<button type="submit" class="btn btn-success">Utente</button>
+	</form>
+
 </body>
