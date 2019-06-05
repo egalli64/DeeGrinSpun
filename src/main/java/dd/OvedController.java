@@ -50,7 +50,7 @@ public class OvedController {
 	@GetMapping("/FeedbackDone")
 	 public String feedbackDone(Model model) {
 		model.addAttribute("reviews", repoRev.findAll()); 
-			return "/FeedbackDone";
+			return "/feedbackDone";
 	}
 	
 	
