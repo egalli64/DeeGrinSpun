@@ -24,11 +24,10 @@ shrink-to-fit=no">
 	<h2>Modifica Ristorante:</h2>
 	<form action="/modifica" method="get">
 
-		<input type="hidden" name="id" th:value="${cur.ristoranteId}"
-			maxlength="30">
+		
 		<table class="table table-striped">
 			<tr>
-
+<th></th>
 				<th>NOME</th>
 				<th>POSIZIONE</th>
 				<th>POSTI DISPONIBILI</th>
@@ -39,7 +38,8 @@ shrink-to-fit=no">
 
 			<tr th:each="cur: ${restaurant}">
 				<!-- NB QUI è RESTAURANT E NON RESTAURANTS -->
-
+			<input type="hidden" name="id" th:value="${cur.ristoranteId}"
+			maxlength="30">
 
 				<td id="nome"><input type="text" name="nome"
 					th:value="${cur.nome}" maxlength="30"></input></td>
