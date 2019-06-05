@@ -16,15 +16,19 @@ shrink-to-fit=no">
 </head>
 
 <body style="text-align: center" class="container-fluid ">
-<!-- Home BUTTON -->
-<h1><a href="index.html" ><img src="img/LOGO1.1.png" class="img-fluid" width="50%"></a></h1>
-<h2>Modifica Ristorante:</h2>
+	<!-- Home BUTTON -->
+	<h1>
+		<a href="index.html"><img src="img/LOGO1.1.png" class="img-fluid"
+			width="30%"></a>
+	</h1>
+	<h2>Modifica Ristorante:</h2>
 	<form action="/modifica" method="get">
- 
-					
+
+		<input type="hidden" name="id" th:value="${cur.ristoranteId}"
+			maxlength="30">
 		<table class="table table-striped">
 			<tr>
-				
+
 				<th>NOME</th>
 				<th>POSIZIONE</th>
 				<th>POSTI DISPONIBILI</th>
@@ -32,12 +36,9 @@ shrink-to-fit=no">
 				<th>EMAIL</th>
 				<th></th>
 			</tr>
-			
+
 			<tr th:each="cur: ${restaurant}">
 				<!-- NB QUI è RESTAURANT E NON RESTAURANTS -->
-				
-<input type="hidden" name="id"
-					th:value="${cur.ristoranteId}" maxlength="30">
 
 
 				<td id="nome"><input type="text" name="nome"
@@ -57,16 +58,12 @@ shrink-to-fit=no">
 				<td id="email"><input type="text" name="email"
 					th:value="${cur.email}" maxlength="30"></input></td>
 				<td>
-				<button type="submit" class="btn btn-success">Confirm</button>
+					<button type="submit" class="btn btn-success">Confirm</button>
 				</td>
 
 			</tr>
 		</table>
 	</form>
-
-
-
-
 
 
 </body>

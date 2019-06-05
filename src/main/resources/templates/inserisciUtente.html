@@ -20,53 +20,44 @@ shrink-to-fit=no">
 </head>
 
 <body>
-<!-- Home BUTTON -->
-<h1><a href="index.html" ><img src="img/LOGO1.1.png" class="img-fluid" width="50%"></a></h1>
-<h2>INSERISCI NUOVO UTENTE:</h2>
-	
-	<table>
-		
-		<tr>
-		<form action="/confirmUtente" method="get">
+	<!-- Home BUTTON -->
+	<h1>
+		<a href="index.html"><img src="img/LOGO1.1.png" class="img-fluid"
+			width="30%"></a>
+	</h1>
+	<h2>INSERISCI NUOVO UTENTE:</h2>
+	<form action="/confirmUtente" method="get">
+		<table>
+
+			<tr>
+
+				<th><label for="utenteId">Utente id:</label> <input type="text"
+					name="id"></th>
+
+				<th><label for="nome">Nome:</label> <input type="text"
+					name="nome"></th>
+
+				<th><label for="cognome">Cognome:</label> <input type="text"
+					name="cognome"></th>
+
+				<th><label for="email">Email</label> <input type="text"
+					name="email"></th>
+
+				<th><label for="userId">User id</label> <input type="text"
+					name="userId"></th>
+
+				<th><label for="affidabilita">Affidabilità</label> <input
+					type="text" name="affidabilita"></th>
+
+
 				<th>
-				<label for="utenteId">Utente id:</label>
-				<input type="text"  name="id">
+					<button type="submit" class="btn btn-success">Confirm</button>
 				</th>
-				
-				<th >
-				<label for="nome">Nome:</label>
-				<input type="text"  name="nome">
-				</th>
-				
-				<th >
-				<label for="cognome">Cognome:</label>
-				<input type="text"  name="cognome">
-				</th>
-				
-				<th>
-				<label for="email">Email</label>
-				<input type="text"  name="email">
-				</th>
-				
-				<th>
-				<label for="userId">User id</label>
-				<input type="text"  name="userId">
-				</th>
-				
-				<th>
-				<label for="affidabilita">Affidabilità</label>
-				<input type="text"  name="affidabilita">
-				</th>
-			
-			
-			<td>
-				<button type="submit" class="btn btn-success">Confirm</button>
-			</td>
-			
-		</form>		
-		</tr>
-		
-	</table>
-		
+
+
+			</tr>
+
+		</table>
+	</form>
 
 </body>
