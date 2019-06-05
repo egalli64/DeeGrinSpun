@@ -23,15 +23,24 @@
 	</h1>
 
 
-	<h1>INSERISCI IL TUO FEEDBACK</h1>
+	<h2>INSERISCI IL TUO FEEDBACK</h2>
 
+<<<<<<< HEAD
 	<h1>Recensione per:</h1>
 	<h2 th:text="${ristoPerRecensione.nome}" ></h2>
+=======
+	<h2>Recensione per:</h2>
+	<h2 th:text="${ristoPerRecensione.nome}" id="id"></h2>
+>>>>>>> branch 'master' of https://github.com/egalli64/DeeGrinSpun.git
 
 
 	<form action="/confirmFeedback" method="get">
+<<<<<<< HEAD
 	<input type="hidden" name="id" th:value="${id}"
 						maxlength="30">
+=======
+		<input type="hidden" th:text="${id}" id="id" name="id"></input>
+>>>>>>> branch 'master' of https://github.com/egalli64/DeeGrinSpun.git
 		<table class="table table-striped">
 			<tr>
 
