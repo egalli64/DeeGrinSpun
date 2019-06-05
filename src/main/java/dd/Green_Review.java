@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Green_Review{
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE , generator="EmpGen")         // CREO SEQUENZA
-	@SequenceGenerator(sequenceName="green_ristoranti_seq", allocationSize=1, name="EmpGen")
+	@SequenceGenerator(sequenceName="reviews_seq", allocationSize=1, name="EmpGen")
 	@Column(name = "REVIEWS_ID")
 	private long reviewsId;
 	@Column(name = "SERVIZIO")

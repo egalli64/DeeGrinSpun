@@ -58,7 +58,8 @@ public class OvedController {
 	
 	
 	@GetMapping("/FeedbackDone")
-	 public String feedbackDone(Model model) {
+	 public String feedbackDone(@RequestParam(name="id") Long id, Model model) {
+		model.addAttribute("id", id); 
 		model.addAttribute("reviews", repoRev.findAll()); 
 			return "/feedbackDone";
 	}
