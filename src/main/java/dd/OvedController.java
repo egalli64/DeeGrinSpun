@@ -21,6 +21,7 @@ public class OvedController {
 	
 	
 	@Autowired Green_RistorantiRepo repo;
+	@Autowired Green_ReviewsRepo repoRev;
 	@Autowired Green_UtentiRepo repoModifica;
 	
 	//-------------- ACCESSO UTENTI---------------
@@ -37,24 +38,48 @@ public class OvedController {
 			return "/vedirecensioni";
 	}
 	
+	//-----------------REVIEWS-----------------------------
 	
 	@GetMapping("/feedback")
 	public String feedback(/*@RequestParam(name = "id") long reviewsId, 
 			@RequestParam(name = "servizio") long servizio, @RequestParam(name = "atmosfera") long atmosfera,
 			@RequestParam(name = "qualitaprezzo") long qualitaprezzo, 
-			@RequestParam(name = "password") long pulizia,
+			@RequestParam(name = "pulizia") long pulizia,
 			@RequestParam(name="commento") String commento,
-			Model model*/) {
+			Model model */) {
 	
 			return "/feedback";
 	}
 	
 	
+	@GetMapping("/FeedbackDone")
+	 public String feedbackDone(Model model) {
+		model.addAttribute("reviews", repoRev.findAll()); 
+			return "/FeedbackDone";
+	}
+	
+	
 	@GetMapping("/confirmFeedback")
-	 public String confirmFeedback(Model model) {
-		model.addAttribute("restaurants", repo.findAll()); 
+	 public String confirmFeedback(
+			 @RequestParam(name = "id") long reviewsId, 
+				@RequestParam(name = "servizio") long servizio, 
+				@RequestParam(name = "atmosfera") long atmosfera,
+				@RequestParam(name = "qualitaprezzo") long qualitaprezzo, 
+				@RequestParam(name = "pulizia") long pulizia,
+				@RequestParam(name="commento") String commento,
+				Model model) {
+		
+		
+		Green_Review review= new Green_Review(reviewsId, servizio, atmosfera, qualitaprezzo, pulizia,
+				commento, Green_Ristorante green_ristorante);
+		
+		
+			repoRev.save(review);
+		model.addAttribute("reviews", repoRev.findAll()); 
+		model.addAttribute("restaurants", repo.findAll());
 			return "/elencoView";
 	}
+	
 	
 	// ---------- ACCESSO ADMIN ---------------
 	@GetMapping("/AccessoAdmin")

@@ -1,10 +1,15 @@
 package dd;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 	
@@ -16,6 +21,7 @@ public class Green_Ristorante {
 @Id
 @GeneratedValue(strategy=GenerationType.SEQUENCE , generator="EmpGen")         // CREO SEQUENZA
 @SequenceGenerator(sequenceName="green_ristoranti_seq", allocationSize=1, name="EmpGen")
+
 @Column(name = "RISTORANTE_ID")
 private long ristoranteId;
 @Column(name = "NOME")
@@ -29,7 +35,8 @@ private String tipoCucina;
 @Column(name = "EMAIL")
 private String email;
 
-
+@OneToMany(mappedBy = "green_ristorante", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+private Set<Green_Review> reviews;
 
 
 
