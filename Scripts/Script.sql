@@ -37,7 +37,6 @@ VALUES (green_ristoranti_seq.nextval, 'Pizzeria da Tommy', '40.75,13.56',100,'pi
 
 
 
-
 --TABELLA UTENTI
 DROP TABLE Green_Utenti;
 DROP SEQUENCE green_utenti_seq;
@@ -52,8 +51,8 @@ constraint utenti_cognome_nn not null,
 email varchar2(222)
 constraint utenti_email_nn not null,
 user_id varchar2(222),
-password_user varchar2(222)
-constraint utenti_password_nn not null,
+password_user varchar2(222),
+
 affidabilita varchar2(222));
 
 insert into Green_Utenti(utente_id, nome, cognome, email,user_id,password_user,affidabilita)
@@ -67,8 +66,6 @@ VALUES (green_utenti_seq.nextval, 'Antonio', 'Poidomani','poid@gmail.com','3','c
 
 insert into Green_Utenti(utente_id, nome, cognome, email,user_id,password_user,affidabilita)
 VALUES (green_utenti_seq.nextval, 'Tommaso', 'Pavan','vtommy@gmail.com','4','c140t','3');
-
-
 
 --TABELLA REVIEWS
 DROP table reviews;

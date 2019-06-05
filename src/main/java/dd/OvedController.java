@@ -206,7 +206,7 @@ public class OvedController {
 
 	
 	
-	//-------------------------- UTENTI DA CORREGGERE SEQUENZA ---------------------------------
+	//-------------------------- UTENTI---------------------------------
 
 	@GetMapping("/elencoUtenti")
 	public String elencoUtenti(Model model) {
@@ -222,7 +222,7 @@ public class OvedController {
 	
 	@GetMapping("/confirmUtente")
 	public String inserisciUtenti(
-			@RequestParam(name = "id") long utenteId, 
+ 
 			@RequestParam(name = "nome") String nome, 
 			@RequestParam(name = "cognome") String cognome,
 			@RequestParam(name = "email") String email, 
@@ -230,7 +230,7 @@ public class OvedController {
 			@RequestParam(name="affidabilita") String affidabilita,
 			
 			Model model) {
-		Green_Utente user= new Green_Utente(utenteId, nome, cognome, email,  userId,
+		Green_Utente user= new Green_Utente(nome, cognome, email,  userId,
 			affidabilita);
 		repoUser.save(user);
 		model.addAttribute("users", repoUser.findAll());
@@ -260,6 +260,5 @@ public class OvedController {
 		
 		return "/elencoUtenti";
 	}
-	
 	
 }
