@@ -1,14 +1,15 @@
 DROP TABLE green_ristoranti;
+DROP SEQUENCE green_ristoranti_seq;
 CREATE SEQUENCE green_ristoranti_seq;
 create table green_ristoranti (
 ristorante_id integer
 constraint ristoranti_pk primary key,
-nome varchar2(20)
+nome varchar2(30)
 constraint ristoranti_nome_nn not null,
-posizione varchar2(20),
+posizione varchar2(30),
 posti_disponibili integer,
-tipo_cucina varchar2(20),
-email varchar2(20));
+tipo_cucina varchar2(30),
+email varchar2(30));
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
 VALUES (green_ristoranti_seq.nextval, 'Trattoria da Vince', '39.14,16.90',100,'cucina calabrese','vinx@live.it');
@@ -33,6 +34,7 @@ VALUES (green_ristoranti_seq.nextval, 'Pizzeria da Tony', '42.70,14.56',100,'piz
 
 insert into green_ristoranti (ristorante_id, nome, posizione, posti_disponibili,tipo_cucina,email)
 VALUES (green_ristoranti_seq.nextval, 'Pizzeria da Tommy', '40.75,13.56',100,'pizza','tommasino@live.it');
+
 
 
 
