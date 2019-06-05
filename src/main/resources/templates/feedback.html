@@ -15,28 +15,27 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body style="text-align:center" class="container-fluid ">
+<body style="text-align: center" class="container-fluid ">
 
 	<h1>INSERISCI IL TUO FEEDBACK</h1>
 
-
-				
-	<form action="/confirmFeedback" method="get">				
-	<table class="table table-striped">
+<form action="/confirmFeedback" method="get">				
+<table class="table table-striped">
 		<tr>
+
 			<th>ID RISTORANTE</th>
 			<th>ID RECENSIONI</th>
-			<th>SERVIZIO</th>
+		<th>SERVIZIO</th>
 			<th>ATMOSFERA</th>
 			<th>QUALITA/PREZZO</th>
 			<th>PULIZIA</th>
 			<th>COMMENTO</th>
 			<th>OPZIONI</th>
 		</tr>
-			
-			
-		
-		
+
+
+
+
 		<tr>
 				<td><input type="text" name="id" id="id" value="1" />
 					<label for="id"></label></td>
@@ -87,8 +86,7 @@
 					<label for="pulizia">1</label><br>
 				<input type="radio" name="pulizia" id="pulizia" value="2" />
 					<label for="pulizia">2</label><br>
-				<input type="radio" name="pulizia" id="pulizia" value="3" checked />
-					<label for="pulizia">3</label><br>
+<label for="pulizia">3</label><br>
 				<input type="radio" name="pulizia" id="pulizia" value="4"  />
 					<label for="pulizia">4</label><br>
 				<input type="radio" name="pulizia" id="pulizia" value="5" />
@@ -102,14 +100,24 @@
 			<button type="submit" class="btn btn-success">Conferma</button>
 			
 			</td>
+<td>
+				<form action="/confirmFeedback" method="get">
+					<button type="submit" class="btn btn-success">Conferma</button>
+				</form> <!-- Home BUTTON -->
+				<form action="Home">
+					<button type="submit" class="btn btn-success">Home</button>
+				</form>
+				<form action="elencoView" method="get">
+					<button type="submit" class="btn btn-success">Utente</button>
+				</form>
+			</td>
 			<td>
-	
 		</tr>
-			
-			
-		
+
+
+
 	</table>
 </form>
-							
+
 </body>
 </html>

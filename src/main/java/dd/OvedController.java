@@ -87,6 +87,11 @@ public class OvedController {
 		
 	return "/AccessoAdmin";
 	}
+	@GetMapping("/Home")
+	public String admin() {
+		
+		return "/index";
+	}
 	
 	
 	@GetMapping("/accesso")
