@@ -1,27 +1,22 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1,
 shrink-to-fit=no">
-
-
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body style="text-align: center" class="container-fluid ">
 	<!-- Home BUTTON -->
 	<h1>
 		<a href="index.html"><img src="img/LOGO1.1.png" class="img-fluid"
 			width="30%"></a>
 	</h1>
-	<h2>Modifica Utente:</h2>
+	<h2>MODIFICA UTENTE:</h2>
 	<form action="/modificaUtente" method="get">
-
 		<table class="table table-striped">
 			<tr>
 				<th>UTENTE_ID</th>
@@ -29,40 +24,25 @@ shrink-to-fit=no">
 				<th>COGNOME</th>
 				<th>EMAIL</th>
 				<th>USER_ID</th>
-				<th>PASSWORD</th>
 				<th>AFFIDABILITA</th>
 				<th></th>
 			</tr>
-
 			<tr th:each="cur: ${users}">
-
 				<td id="id"><input type="text" name="id"
 					th:value="${cur.utenteId}" maxlength="30" readonly></td>
-
-
-
 				<td id="nome"><input type="text" name="nome"
 					th:value="${cur.nome}" maxlength="30"></input></td>
-
-
 				<td id=cognome><input type="text" name="cognome"
 					th:value="${cur.cognome}" maxlength="30"></input></td>
-
 				<td id="email"><input type="text" name="email"
 					th:value="${cur.email}" maxlength="30"></input></td>
-
 				<td id="userId"><input type="text" name="userId"
 					th:value="${cur.userId}" maxlength="30"></input></td>
-
-				<td id="password"><input type="text" name="password"
-					th:value="${cur.password}" maxlength="30"></input></td>
-
 				<td id="affidabilita"><input type="text" name="affidabilita"
 					th:value="${cur.affidabilita}" maxlength="30"></input></td>
 				<td>
 					<button type="submit" class="btn btn-success">Confirm</button>
 				</td>
-
 			</tr>
 		</table>
 	</form>
