@@ -90,6 +90,20 @@ public class Green_Review{
 		this.commento = commento;
 		this.green_ristorante = green_ristorante;
 	}
+	
+	
+	
+	
+	
+	// IL COSTRUTTORE SENZA ID GENERA AUTOMATICAMENTE CON LA SEQUENZA DI SQL L'ID
+	public Green_Review(long servizio, long atmosfera, long qualitaprezzo, long pulizia, String commento) {
+		super(); 
+		this.servizio = servizio;
+		this.atmosfera = atmosfera;
+		this.qualitaprezzo = qualitaprezzo;
+		this.pulizia = pulizia;
+		this.commento = commento;
+	}
 	public Green_Review() {
 		super();
 	}

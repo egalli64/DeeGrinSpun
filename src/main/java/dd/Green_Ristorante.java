@@ -61,7 +61,7 @@ public Green_Ristorante(long ristoranteId, String nome, String posizione, long p
 
 
 public Green_Ristorante(String nome, String posizione, long postiDisponibili, String tipoCucina, String email
-		) {
+		) { // IL COSTRUTTORE SENZA ID GENERA AUTOMATICAMENTE CON LA SEQUENZA DI SQL L'ID
 	
 	this.nome = nome;
 	this.posizione = posizione;

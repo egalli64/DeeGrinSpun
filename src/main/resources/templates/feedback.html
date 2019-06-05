@@ -29,8 +29,6 @@
 		<table class="table table-striped">
 			<tr>
 
-				<th>ID RISTORANTE</th>
-				<th>ID RECENSIONI</th>
 				<th>SERVIZIO</th>
 				<th>ATMOSFERA</th>
 				<th>QUALITA/PREZZO</th>
@@ -42,12 +40,12 @@
 
 
 
-			<tr>
-				<td><input type="text" name="id" id="id" value="1" /> <label
-					for="id"></label></td>
 
-				<td><input type="text" name="reviewsId" id="reviewsId"
-					value="1" /> <label for="reviewsId"></label></td>
+
+			<tr>
+			<td th:text="${id}" id="id"></td>
+				
+
 				<td><input type="radio" name="servizio" id="servizio" value="1" />
 					<label for="servizio">1</label><br> <input type="radio"
 					name="servizio" id="servizio" value="2" /> <label for="servizio">2</label><br>

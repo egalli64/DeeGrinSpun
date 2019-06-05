@@ -44,16 +44,15 @@ public class OvedController {
 	public String feedback( @RequestParam(name="id") Long id, Model model) {
 	
 		
-		Optional<Green_Ristorante> opt= repo.findById(id); /* ritorna un optional di ristorante 
-		(l'OPTIONAL serve per poter lavorare anche con i null. Optional è una collezione,
-		e lo dobbiamo importare. */
 		
-		if(opt.isPresent()) { // se opt non è null
-			// model delete
-			model.addAttribute("revAttuale", opt.get()); // opt.get passa il valore nella chiave "restaurant"
-		
-		}
+		model.addAttribute("id", id); // gli passo id alla pagina feedback
 
+		Optional<Green_Ristorante> opt= repo.findById(id); // prendo il ristorante con l'id scelto
+	
+		if(opt.isPresent()) { // se opt non è null
+		
+		model.addAttribute("ristoPerRecensione", opt.get()); // opt.get passa il ristorante alla chiave ristoPerRecensione
+		}
 			return "/feedback";
 	}
 	
@@ -75,6 +74,16 @@ public class OvedController {
 				@RequestParam(name="commento") String commento,
 				Model model) {
 		
+		
+		
+		Optional<Green_Ristorante> opt= repo.findById(id); /* ritorna un optional di ristorante 
+		(l'OPTIONAL serve per poter lavorare anche con i null. Optional è una collezione,
+		e lo dobbiamo importare. */
+		
+		if(opt.isPresent()) { // se opt non è null
+			 
+			// model delete
+			model.addAttribute("ristoPerRecensione", opt.get()); // opt.get passa il valore nella chiave "restaurant"
 		
 		Green_Review review= new Green_Review(reviewsId, servizio, atmosfera, qualitaprezzo, pulizia,
 				commento, Green_Ristorante green_ristorante);
