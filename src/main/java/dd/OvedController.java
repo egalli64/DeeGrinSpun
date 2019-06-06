@@ -283,4 +283,17 @@ public class OvedController {
 	
 	}
 	
+	
+	/*
+	 *  modified reviews method that works! Pay attention to underscore!
+	 */
+	@Autowired
+	Green_ReviewsRepo repo3;
+	
+	@GetMapping("/showRev")
+	public String recensioni(@RequestParam(name = "id") long id,Model model)  {
+			model.addAttribute("reviews", repo3.findByGreenRistorante_ristoranteId(id)); 
+			return "/feedbackDone";
+	}
+	
 }

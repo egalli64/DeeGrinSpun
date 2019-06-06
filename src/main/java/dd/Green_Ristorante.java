@@ -35,7 +35,7 @@ private String tipoCucina;
 @Column(name = "EMAIL")
 private String email;
 
-@OneToMany(mappedBy = "green_ristorante", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+@OneToMany(mappedBy = "greenRistorante", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 private Set<Green_Review> reviews;
 
 

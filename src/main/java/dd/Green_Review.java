@@ -30,7 +30,7 @@ public class Green_Review{
 	private String commento;
 	@ManyToOne
 	@JoinColumn(name = "RISTORANTE_ID")
-	private Green_Ristorante green_ristorante;
+	private Green_Ristorante greenRistorante;
 	public long getReviewsId() {
 		return reviewsId;
 	}
@@ -68,16 +68,16 @@ public class Green_Review{
 		this.commento = commento;
 	}
 	public Green_Ristorante getGreen_ristorante() {
-		return green_ristorante;
+		return greenRistorante;
 	}
 	public void setGreen_ristorante(Green_Ristorante green_ristorante) {
-		this.green_ristorante = green_ristorante;
+		this.greenRistorante = green_ristorante;
 	}
 	@Override
 	public String toString() {
 		return "Green_Review [reviewsId=" + reviewsId + ", servizio=" + servizio + ", atmosfera=" + atmosfera
 				+ ", qualitaprezzo=" + qualitaprezzo + ", pulizia=" + pulizia + ", commento=" + commento
-				+ ", green_ristorante=" + green_ristorante + "]";
+				+ ", green_ristorante=" + greenRistorante + "]";
 	}
 	public Green_Review(long reviewsId, long servizio, long atmosfera, long qualitaprezzo, long pulizia,
 			String commento, Green_Ristorante green_ristorante) {
@@ -88,7 +88,7 @@ public class Green_Review{
 		this.qualitaprezzo = qualitaprezzo;
 		this.pulizia = pulizia;
 		this.commento = commento;
-		this.green_ristorante = green_ristorante;
+		this.greenRistorante = green_ristorante;
 	}
 	
 	
